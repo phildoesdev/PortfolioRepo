@@ -1,0 +1,31 @@
+
+"""
+/////////////////////////////////////////////
+DECENT Static Camera Settings (no pitch or yaw changes)
+    Low angle, long view. Looks great with y-billboard, looks great with regular billboard too...
+    Free Mvmt looks mostly good
+    A yaw of 90 deg works too, but it kind of makes you brain 'want to look down', and y-billboard does not work with it
+        Height: 4m
+        FOV: 70%
+        Pitch: -10
+        Yaw: -45
+            # Vector3(deg_to_rad(-10), deg_to_rad(-45), 0)
+/////////////////////////////////////////////
+Decent Stationary camera
+    High angle, slightly stunted view, but could be good to scroll along a single axis in this angle
+    Free mvmt doesn't look very good because things float quite a bit. If you turn on collision shapes you can see how far off things go. Ooof.
+        Position: (-2,10,7)
+        FOV: 65%
+        Pitch: -45
+        Yaw: -65            
+            # Vector3(deg_to_rad(-45), deg_to_rad(-65), 0)
+/////////////////////////////////////////////
+Interesting "High Up" Camera
+    High y, same angle as the other high angle camera, manipulate camera's FOV for interesting zoom-in, zoom-out focus type thing
+    It feels pretty nice up super high with a lower FOV. For whatever reason it seems to feel a little different
+        Position: (-10,20,11)
+        FOV: 35%
+        Pitch: -45
+        Yaw: -65
+            # Vector3(deg_to_rad(-45), deg_to_rad(-65), 0)
+"""

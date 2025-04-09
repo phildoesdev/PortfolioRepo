@@ -1,0 +1,240 @@
+[
+  {
+	"CreatureName": "Skeleton",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": -1.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Skeleton",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": -1.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "SkeletonAxe",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "SkeletonAxe",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Zombie",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 8.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Zombie",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Zombie",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Orc",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 15.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Orc",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Orc",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 2.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "OrcLord",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "OrcLord",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Ratman",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 15.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "RatmanWarrior",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "RatmanWarrior",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "RatmanWarriorSword",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Troll",
+	"Description": "",
+	"SpawnCount": 1,
+	"TimeBeforeSpawnMS": 15.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Squirell",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": -8.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Harpy",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Ogre",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 5.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Ogre",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 5.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Harpy",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 8.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "StoneHarpy",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "StoneHarpy",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "StoneHarpy",
+	"Description": "",
+	"SpawnCount": 4,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "StoneHarpy",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Squirell",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": -8.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "LizardMan",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 15.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "LizardMan",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 2.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "LizardMan",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 2.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "LizardManMace",
+	"Description": "",
+	"SpawnCount": 2,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "LizardManSpear",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 0.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "MinotaurArmored",
+	"Description": "",
+	"SpawnCount": 1,
+	"TimeBeforeSpawnMS": 25.0,
+	"NavigationRegionName": "PathTwo"
+  },
+  {
+	"CreatureName": "Squirell",
+	"Description": "",
+	"SpawnCount": 3,
+	"TimeBeforeSpawnMS": 10.0,
+	"NavigationRegionName": "PathTwo"
+  }
+]

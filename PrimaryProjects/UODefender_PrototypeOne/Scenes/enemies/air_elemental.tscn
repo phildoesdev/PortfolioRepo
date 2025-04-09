@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfr72lxall5n6"]
+
+[ext_resource type="Texture2D" uid="uid://dq3c4q7dp02a6" path="res://Assets/Monsters/1_0.bmp" id="1_5vxg1"]
+[ext_resource type="Script" uid="uid://b8kr5ads16dn" path="res://Scenes/enemies/air_elemental.gd" id="1_m4wy2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n2ced"]
+radius = 0.05
+height = 0.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pcidl"]
+radius = 0.05
+height = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dow6j"]
+albedo_color = Color(1, 0.32549, 0.658824, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xvvaj"]
+material = SubResource("StandardMaterial3D_dow6j")
+size = Vector3(0.01, 0.01, 0.1)
+
+[node name="AirElemental" type="CharacterBody3D"]
+script = ExtResource("1_m4wy2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+mesh = SubResource("CapsuleMesh_n2ced")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+shape = SubResource("CapsuleShape3D_pcidl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38, 0)
+visible = false
+billboard = 1
+texture = ExtResource("1_5vxg1")
+
+[node name="EnemyNavAgent" type="NavigationAgent3D" parent="."]
+height = 0.75
+debug_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685458, 0.0889753)
+mesh = SubResource("BoxMesh_xvvaj")

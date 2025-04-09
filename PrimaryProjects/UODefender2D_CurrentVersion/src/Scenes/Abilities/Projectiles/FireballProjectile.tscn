@@ -1,0 +1,93 @@
+[gd_scene load_steps=20 format=3 uid="uid://bg6005blosiut"]
+
+[ext_resource type="Texture2D" uid="uid://csbcg1plc5skf" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E4.png" id="1_g4uvk"]
+[ext_resource type="Script" uid="uid://ctnnau4oxbn3g" path="res://src/Scenes/Abilities/Projectiles/FireballProjectile.cs" id="1_tcosi"]
+[ext_resource type="Texture2D" uid="uid://bt7l5ddppu7ux" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E5.png" id="2_tv5nh"]
+[ext_resource type="Texture2D" uid="uid://bwhuqut6thsl0" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E6.png" id="3_qfcg1"]
+[ext_resource type="Texture2D" uid="uid://i67s8ra7ium1" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E7.png" id="4_s4nil"]
+[ext_resource type="Texture2D" uid="uid://dl3t5mck5ndva" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E8.png" id="5_rufvn"]
+[ext_resource type="Texture2D" uid="uid://b7afk0w1njiww" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36E9.png" id="6_gada1"]
+[ext_resource type="Texture2D" uid="uid://dvj61lxokgvuv" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36EA.png" id="7_dbg4f"]
+[ext_resource type="Texture2D" uid="uid://6js1r0myubx3" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36EB.png" id="8_83egw"]
+[ext_resource type="Texture2D" uid="uid://cfcgmycy0sho0" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36EC.png" id="9_tip6c"]
+[ext_resource type="Texture2D" uid="uid://c40lu2eo2nm5b" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36ED.png" id="10_gxr4a"]
+[ext_resource type="Texture2D" uid="uid://bokor1yhg7r70" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36EE.png" id="11_obo7s"]
+[ext_resource type="Texture2D" uid="uid://bb7grpaledwtj" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36EF.png" id="12_ngyve"]
+[ext_resource type="Texture2D" uid="uid://duydeltk3lr76" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36F0.png" id="13_lvqxd"]
+[ext_resource type="Texture2D" uid="uid://kmuljgcs0crr" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36F1.png" id="14_8v8h4"]
+[ext_resource type="Texture2D" uid="uid://1gtiw16r2ie7" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36F2.png" id="15_5eb6x"]
+[ext_resource type="Texture2D" uid="uid://b0hy6gjv6br7n" path="res://src/Assets/Attacks/Projectiles/Fireball_Medium/0x36F3.png" id="16_v23m4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amy8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g4uvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tv5nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qfcg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s4nil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rufvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gada1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dbg4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_83egw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tip6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gxr4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_obo7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ngyve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lvqxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8v8h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5eb6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v23m4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2pmb"]
+radius = 5.0
+height = 18.0
+
+[node name="FireballProjectile" type="Area2D"]
+script = ExtResource("1_tcosi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_amy8s")
+autoplay = "default"
+frame_progress = 0.837575
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 0)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_r2pmb")

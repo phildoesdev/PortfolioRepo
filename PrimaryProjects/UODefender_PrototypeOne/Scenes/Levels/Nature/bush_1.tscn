@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://1nj3t0f50k6x"]
+
+[ext_resource type="Texture2D" uid="uid://dfglcjas1fl1b" path="res://Assets/Items/Nature/Item 0xCA5.bmp" id="1_jyyvi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.147255, 0)
+billboard = 1
+texture = ExtResource("1_jyyvi")

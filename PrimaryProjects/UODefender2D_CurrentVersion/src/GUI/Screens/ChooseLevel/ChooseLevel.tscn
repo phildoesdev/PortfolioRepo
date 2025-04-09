@@ -1,0 +1,313 @@
+[gd_scene load_steps=23 format=3 uid="uid://cvw3safq3oku7"]
+
+[ext_resource type="Shader" uid="uid://0lftbigkw31n" path="res://src/GUI/Screens/MainMenu/Shaders/MainMenuBGShader.gdshader" id="1_u3pjw"]
+[ext_resource type="Script" uid="uid://co6s5vu1ohpaq" path="res://src/GUI/Screens/ChooseLevel/ChooseLevel.cs" id="1_u4c5y"]
+[ext_resource type="Texture2D" uid="uid://dudky6xamvdh3" path="res://src/GUI/Screens/MainMenu/Assets/bgs/noise_2.png" id="2_ubpx3"]
+[ext_resource type="Texture2D" uid="uid://cn6bkingr6cs3" path="res://src/GUI/Screens/ChooseLevel/Assets/bgs/sm_whiteBG.png" id="3_3to4p"]
+[ext_resource type="Texture2D" uid="uid://vqgyykxgbjwc" path="res://src/GUI/Screens/ChooseLevel/Assets/deco/sm_bg_deco_top.png" id="4_nj86d"]
+[ext_resource type="Texture2D" uid="uid://cu7u2pk8ch2bg" path="res://src/GUI/Screens/ChooseLevel/Assets/deco/sm_bg_deco_bot.png" id="5_5s0ii"]
+[ext_resource type="Texture2D" uid="uid://ce6uxqmf81ysw" path="res://src/GUI/Screens/ChooseLevel/Assets/bgs/tombstone_level_bg.png" id="6_ryulq"]
+[ext_resource type="Texture2D" uid="uid://b3gaaxwgqioyh" path="res://src/GUI/Screens/ChooseLevel/Assets/functionalDeco/choose_lvl_courtyard.png" id="7_8xi65"]
+[ext_resource type="Texture2D" uid="uid://chua8cd16sxnx" path="res://src/GUI/Screens/ChooseLevel/Assets/bgs/tombstone_level_bg_img_overlay.png" id="8_kcco7"]
+[ext_resource type="Texture2D" uid="uid://brkt1cn8y8050" path="res://src/GUI/Screens/ChooseLevel/Assets/functionalDeco/btn_group_deco.png" id="8_wesmu"]
+[ext_resource type="Texture2D" uid="uid://bw47o5vgydwb1" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_left_0.png" id="9_7pqvc"]
+[ext_resource type="Theme" uid="uid://c84cirohc7i03" path="res://src/Assets/Resources/ThemeResources/default_theme.tres" id="9_csemk"]
+[ext_resource type="Texture2D" uid="uid://dxrh5g2j5parc" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_left_2.png" id="10_unydk"]
+[ext_resource type="Texture2D" uid="uid://r3y6nfxg17j4" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_left_1.png" id="11_avgx6"]
+[ext_resource type="Texture2D" uid="uid://clel76nqwi2xb" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_right_0.png" id="12_5iadv"]
+[ext_resource type="Texture2D" uid="uid://b2p06wp1xy567" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_right_2.png" id="13_b0a2g"]
+[ext_resource type="Texture2D" uid="uid://ch3k60sd2baoy" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/red_arrow_right_1.png" id="14_it360"]
+[ext_resource type="Texture2D" uid="uid://bl25y47cg67c6" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/lg_grey_btn_00.png" id="16_u5yg8"]
+[ext_resource type="Texture2D" uid="uid://duvtbfg3tora" path="res://src/GUI/Screens/ChooseLevel/Assets/functionalDeco/title_text_deco.png" id="16_x22uk"]
+[ext_resource type="Texture2D" uid="uid://bbkfnbpkncmuh" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/lg_grey_btn_02.png" id="17_1tjxy"]
+[ext_resource type="Texture2D" uid="uid://scheuyynm12" path="res://src/GUI/Screens/ChooseLevel/Assets/buttons/lg_grey_btn_01.png" id="18_k8ulg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_68ear"]
+shader = ExtResource("1_u3pjw")
+shader_parameter/noise_texture = ExtResource("2_ubpx3")
+
+[node name="ChooseLevel" type="CanvasLayer"]
+script = ExtResource("1_u4c5y")
+
+[node name="NoisyBG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_68ear")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ChooseALevel" type="Control" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="TextureRect" parent="Content/ChooseALevel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375521
+anchor_top = 0.196498
+anchor_right = 0.625
+anchor_bottom = 0.803502
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3to4p")
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleText" type="RichTextLabel" parent="Content/ChooseALevel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.415625
+anchor_top = 0.237354
+anchor_right = 0.594792
+anchor_bottom = 0.292802
+theme = ExtResource("9_csemk")
+theme_override_font_sizes/normal_font_size = 32
+text = "Choose A Level
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="deco" type="Control" parent="Content/ChooseALevel"]
+layout_mode = 1
+anchor_left = 0.376563
+anchor_top = 0.197471
+anchor_right = 0.625
+anchor_bottom = 0.798638
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="topDeco" type="TextureRect" parent="Content/ChooseALevel/deco"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0251572
+anchor_top = -0.00809062
+anchor_right = 1.01048
+anchor_bottom = 0.0307443
+offset_right = -3.05176e-05
+texture = ExtResource("4_nj86d")
+metadata/_edit_use_anchors_ = true
+
+[node name="botDeco" type="TextureRect" parent="Content/ChooseALevel/deco"]
+layout_mode = 0
+anchor_left = 0.140461
+anchor_top = 0.991909
+anchor_right = 0.853249
+anchor_bottom = 1.02104
+texture = ExtResource("5_5s0ii")
+metadata/_edit_use_anchors_ = true
+
+[node name="titleTextBorder" type="TextureRect" parent="Content/ChooseALevel/deco"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 37.0
+offset_right = 415.0
+offset_bottom = 77.0
+texture = ExtResource("16_x22uk")
+
+[node name="Headstone" type="Control" parent="Content/ChooseALevel"]
+layout_mode = 1
+anchor_left = 0.385938
+anchor_top = 0.275292
+anchor_right = 0.614062
+anchor_bottom = 0.596304
+metadata/_edit_use_anchors_ = true
+
+[node name="HeadStoneBG" type="TextureRect" parent="Content/ChooseALevel/Headstone"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0696347
+anchor_top = 0.0878788
+anchor_right = 0.930365
+anchor_bottom = 0.912121
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ryulq")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSnapshotImg" type="TextureRect" parent="Content/ChooseALevel/Headstone"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146
+anchor_top = 0.172909
+anchor_right = 0.854
+anchor_bottom = 0.760909
+offset_left = 0.0519943
+offset_top = -0.0600052
+offset_right = -0.052002
+offset_bottom = -0.100006
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_8xi65")
+metadata/_edit_use_anchors_ = true
+
+[node name="HeadstoneOverlay" type="TextureRect" parent="Content/ChooseALevel/Headstone"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0730594
+anchor_top = 0.539394
+anchor_right = 0.931507
+anchor_bottom = 0.781818
+texture = ExtResource("8_kcco7")
+metadata/_edit_use_anchors_ = true
+
+[node name="HeadstoneDisplaySection" type="Control" parent="Content/ChooseALevel/Headstone"]
+layout_mode = 1
+anchor_left = 0.0730594
+anchor_top = 0.793939
+anchor_right = 0.931507
+anchor_bottom = 0.912121
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBtn" type="TextureButton" parent="Content/ChooseALevel/Headstone/HeadstoneDisplaySection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0292553
+anchor_top = 0.230769
+anchor_right = 0.0794043
+anchor_bottom = 0.76959
+offset_right = 0.143997
+offset_bottom = -0.0139999
+texture_normal = ExtResource("9_7pqvc")
+texture_pressed = ExtResource("10_unydk")
+texture_hover = ExtResource("11_avgx6")
+texture_disabled = ExtResource("11_avgx6")
+metadata/_edit_use_anchors_ = true
+
+[node name="ForwardBtn" type="TextureButton" parent="Content/ChooseALevel/Headstone/HeadstoneDisplaySection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.917553
+anchor_top = 0.230769
+anchor_right = 0.968085
+anchor_bottom = 0.769231
+texture_normal = ExtResource("12_5iadv")
+texture_pressed = ExtResource("13_b0a2g")
+texture_hover = ExtResource("14_it360")
+texture_disabled = ExtResource("14_it360")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelTitleLabel" type="RichTextLabel" parent="Content/ChooseALevel/Headstone/HeadstoneDisplaySection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135638
+anchor_top = 0.25641
+anchor_right = 0.898936
+anchor_bottom = 1.28205
+theme = ExtResource("9_csemk")
+theme_override_colors/default_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]Castle Courtyard[/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttons" type="Control" parent="Content/ChooseALevel"]
+layout_mode = 1
+anchor_left = 0.419271
+anchor_top = 0.598249
+anchor_right = 0.584375
+anchor_bottom = 0.811284
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="TextureButton" parent="Content/ChooseALevel/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277602
+anchor_top = 0.109589
+anchor_right = 0.694006
+anchor_bottom = 0.360731
+offset_right = -1.52588e-05
+texture_normal = ExtResource("16_u5yg8")
+texture_pressed = ExtResource("17_1tjxy")
+texture_hover = ExtResource("18_k8ulg")
+texture_disabled = ExtResource("18_k8ulg")
+metadata/_edit_use_anchors_ = true
+
+[node name="btnLabel" type="RichTextLabel" parent="Content/ChooseALevel/Buttons/Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.218182
+anchor_right = 0.984848
+anchor_bottom = 0.836364
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("9_csemk")
+theme_override_colors/default_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+bbcode_enabled = true
+text = "[center]Play[/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="Content/ChooseALevel/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277603
+anchor_top = 0.415525
+anchor_right = 0.694006
+anchor_bottom = 0.666667
+offset_right = -1.52588e-05
+texture_normal = ExtResource("16_u5yg8")
+texture_pressed = ExtResource("17_1tjxy")
+texture_hover = ExtResource("18_k8ulg")
+texture_disabled = ExtResource("18_k8ulg")
+metadata/_edit_use_anchors_ = true
+
+[node name="btnLabel" type="RichTextLabel" parent="Content/ChooseALevel/Buttons/Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.218182
+anchor_right = 0.984848
+anchor_bottom = 0.836364
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("9_csemk")
+theme_override_colors/default_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+bbcode_enabled = true
+text = "[center]Back[/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="btnGroupBorder" type="TextureRect" parent="Content/ChooseALevel/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246057
+anchor_top = 0.0502278
+anchor_right = 0.728707
+anchor_bottom = 0.69863
+offset_right = 1.52588e-05
+mouse_filter = 2
+texture = ExtResource("8_wesmu")
+metadata/_edit_use_anchors_ = true
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -976.0
+offset_right = 976.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 10)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.1
+offset_bottom = 0.199951
+grow_horizontal = 2

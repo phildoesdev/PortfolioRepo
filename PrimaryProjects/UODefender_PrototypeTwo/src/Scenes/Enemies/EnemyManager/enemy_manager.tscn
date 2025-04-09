@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfokgbfkmgqkh"]
+
+[ext_resource type="Script" uid="uid://bcxd21knuicrt" path="res://src/Scenes/Enemies/EnemyManager/enemy_manager.gd" id="1_qu7xh"]
+
+[node name="EnemyManager" type="Node3D"]
+script = ExtResource("1_qu7xh")
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="EnemySpawnMeshes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000746727, 0.00531578, 0.00212288)

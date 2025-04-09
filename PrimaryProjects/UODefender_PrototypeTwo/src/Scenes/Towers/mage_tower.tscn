@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8toa5bjfl5e6"]
+
+[ext_resource type="Script" uid="uid://c5h3pl5g6vcor" path="res://src/Scenes/Towers/mage_tower.gd" id="1_2cv10"]
+[ext_resource type="AnimationLibrary" uid="uid://bm4d6jhhbmh2l" path="res://src/Scenes/Towers/Animations/tower_attack_animations.res" id="2_r80kd"]
+[ext_resource type="AnimationLibrary" uid="uid://8oxop2xy8yg5" path="res://src/Scenes/Towers/Animations/tower_movement_animations.res" id="3_odfqr"]
+[ext_resource type="Texture2D" uid="uid://2xf85csr7lte" path="res://src/Assets/SpriteSheets/Heros/Clothing/Robe/RobeAligned.png" id="4_2lj27"]
+[ext_resource type="Texture2D" uid="uid://dsuhstsagnqyn" path="res://src/Assets/SpriteSheets/Heros/Weapons/SpellBook/SpellBookAligned.png" id="5_al7nj"]
+[ext_resource type="Texture2D" uid="uid://csuiqf1i3illk" path="res://src/Assets/SpriteSheets/Heros/Clothing/MageHat/MageHatAligned.png" id="6_esi67"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ltlkl"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xxad8"]
+radius = 0.15
+height = 0.6
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bqagw"]
+load_path = "res://.godot/imported/HumanFemale.png-1cc23e748729735b8b49963d648dfcc7.ctex"
+
+[node name="MageTower" type="CharacterBody3D"]
+script = ExtResource("1_2cv10")
+
+[node name="TowerSprite" type="Sprite3D" parent="."]
+billboard = 2
+texture = SubResource("ViewportTexture_ltlkl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xxad8")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Tower2DSpriteContainer" type="Node2D" parent="SubViewport"]
+position = Vector2(64, 64)
+
+[node name="Tower" type="Sprite2D" parent="SubViewport/Tower2DSpriteContainer"]
+texture_filter = 1
+texture_repeat = 1
+texture = SubResource("CompressedTexture2D_bqagw")
+hframes = 10
+vframes = 175
+frame = 940
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/Tower2DSpriteContainer/Tower"]
+libraries = {
+"TowerAttack": ExtResource("2_r80kd"),
+"TowerMvmt": ExtResource("3_odfqr")
+}
+
+[node name="Tower3" type="Sprite2D" parent="SubViewport/Tower2DSpriteContainer"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("4_2lj27")
+hframes = 10
+vframes = 175
+frame = 940
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/Tower2DSpriteContainer/Tower3"]
+libraries = {
+"TowerAttack": ExtResource("2_r80kd"),
+"TowerMvmt": ExtResource("3_odfqr")
+}
+
+[node name="Tower4" type="Sprite2D" parent="SubViewport/Tower2DSpriteContainer"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("5_al7nj")
+hframes = 10
+vframes = 175
+frame = 940
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/Tower2DSpriteContainer/Tower4"]
+libraries = {
+"TowerAttack": ExtResource("2_r80kd"),
+"TowerMvmt": ExtResource("3_odfqr")
+}
+
+[node name="Tower2" type="Sprite2D" parent="SubViewport/Tower2DSpriteContainer"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("6_esi67")
+hframes = 10
+vframes = 175
+frame = 240
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/Tower2DSpriteContainer/Tower2"]
+libraries = {
+"TowerAttack": ExtResource("2_r80kd"),
+"TowerMvmt": ExtResource("3_odfqr")
+}

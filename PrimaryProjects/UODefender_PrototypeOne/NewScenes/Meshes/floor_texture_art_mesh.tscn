@@ -1,0 +1,100 @@
+[gd_scene load_steps=18 format=3 uid="uid://cj06f6j1kcadi"]
+
+[ext_resource type="Texture2D" uid="uid://cixwb6pfkx8uy" path="res://NewAssets/GroundTextures/GrassSandstonePaverRoad (1).bmp" id="1_0t050"]
+[ext_resource type="Texture2D" uid="uid://id513fv56vye" path="res://NewAssets/GroundTextures/Grass (2).bmp" id="2_opqtk"]
+[ext_resource type="Texture2D" uid="uid://ba3jk1ha70u14" path="res://NewAssets/GroundTextures/SandstonePaversRoad (3).bmp" id="3_iwn1i"]
+[ext_resource type="Texture2D" uid="uid://bs74nr10nbxm7" path="res://NewAssets/GroundTiles/Grass (2).bmp" id="4_6sjkf"]
+[ext_resource type="Texture2D" uid="uid://csqgxyaykcihg" path="res://NewAssets/GroundTiles/Grass (3).bmp" id="4_ufpkj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vofxr"]
+albedo_texture = ExtResource("1_0t050")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fyfa7"]
+material = SubResource("StandardMaterial3D_vofxr")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3vvq"]
+size = Vector3(0.5, 0, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx388"]
+albedo_texture = ExtResource("2_opqtk")
+texture_filter = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1dmml"]
+material = SubResource("StandardMaterial3D_dx388")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkqtm"]
+albedo_texture = ExtResource("3_iwn1i")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_02ykk"]
+material = SubResource("StandardMaterial3D_kkqtm")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv76a"]
+albedo_texture = ExtResource("4_ufpkj")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ojbn8"]
+material = SubResource("StandardMaterial3D_pv76a")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mono4"]
+albedo_texture = ExtResource("4_6sjkf")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w25be"]
+material = SubResource("StandardMaterial3D_mono4")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8r7g1"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="FloorTextureArtMesh" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_fyfa7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_j3vvq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1dmml")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j3vvq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("PlaneMesh_02ykk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_j3vvq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.005, 0, 0)
+mesh = SubResource("PlaneMesh_ojbn8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_j3vvq")
+
+[node name="Grass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_w25be")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grass2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass2/StaticBody3D"]
+shape = SubResource("BoxShape3D_8r7g1")

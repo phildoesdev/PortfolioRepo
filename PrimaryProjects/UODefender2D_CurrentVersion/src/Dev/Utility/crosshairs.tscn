@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://0sxhouv7v30m"]
+
+[ext_resource type="Script" uid="uid://cayu84bmytdkf" path="res://src/Dev/Utility/Crosshairs.cs" id="1_r3mgb"]
+
+[node name="Crosshairs" type="CenterContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Crosshairs" type="Control" parent="."]
+layout_mode = 2
+script = ExtResource("1_r3mgb")

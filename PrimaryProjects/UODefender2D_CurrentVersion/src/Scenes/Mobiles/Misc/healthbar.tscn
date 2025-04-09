@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmvjulqymkodd"]
+
+[ext_resource type="Texture2D" uid="uid://bghy3dg4510b8" path="res://src/Assets/UserInterface/ProgressBars/healthbar_red.png" id="1_k3hh4"]
+[ext_resource type="Texture2D" uid="uid://3vu3tqfuxh8t" path="res://src/Assets/UserInterface/ProgressBars/healthbar_overlay.png" id="2_s61ly"]
+[ext_resource type="Texture2D" uid="uid://btgxdu7isjrig" path="res://src/Assets/UserInterface/ProgressBars/healthbar_blue.png" id="3_pbdma"]
+
+[node name="Healthbar" type="TextureProgressBar"]
+anchors_preset = -1
+offset_right = 268.0
+offset_bottom = 40.0
+value = 100.0
+texture_under = ExtResource("1_k3hh4")
+texture_over = ExtResource("2_s61ly")
+texture_progress = ExtResource("3_pbdma")
+metadata/_edit_use_anchors_ = true

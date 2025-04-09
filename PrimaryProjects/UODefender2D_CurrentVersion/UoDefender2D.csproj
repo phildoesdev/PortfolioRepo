@@ -1,0 +1,15 @@
+<Project Sdk="Godot.NET.Sdk/4.4.0">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="src\scenes\levels\castlecourtyard\enemyspawnwavedescriptions\Wave1.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="addons\animation_builder\" />
+    <Folder Include="src\Scenes\Levels\CastleCourtYard\EnemySpawnWaveDescriptions\" />
+    <Folder Include="src\Scenes\Mobiles\Misc\" />
+    <Folder Include="src\Scenes\System\Utility\" />
+  </ItemGroup>
+</Project>

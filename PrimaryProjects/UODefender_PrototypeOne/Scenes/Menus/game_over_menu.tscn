@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://fure2tilmqes"]
+
+[ext_resource type="FontFile" uid="uid://btvvslayursnk" path="res://Assets/Fonts/Changa/Changa-VariableFont_wght.ttf" id="2_qv6ps"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxhfn"]
+font = ExtResource("2_qv6ps")
+font_size = 128
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_oxhfn")
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"

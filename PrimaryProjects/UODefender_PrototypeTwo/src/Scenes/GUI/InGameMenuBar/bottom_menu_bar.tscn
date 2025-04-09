@@ -1,0 +1,257 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk7v1bsit1bv8"]
+
+[ext_resource type="Script" uid="uid://yspgui2st4xl" path="res://src/Scenes/GUI/InGameMenuBar/bottom_menu_bar.gd" id="1_542gl"]
+[ext_resource type="Texture2D" uid="uid://btfsne1qw8lkm" path="res://Other/GUI_Mockups/Main_Gui_Mockup.png" id="1_axsvn"]
+[ext_resource type="Texture2D" uid="uid://dwms82aefbf45" path="res://Other/GUI_Mockups/bloody_ankh.png" id="2_b3ymc"]
+[ext_resource type="FontFile" uid="uid://bve12nkwu3lk8" path="res://src/Assets/UI/Fonts/Changa/static/Changa-Regular.ttf" id="3_flj3m"]
+[ext_resource type="Texture2D" uid="uid://dqk86s3ph6xt3" path="res://Other/GUI_Mockups/gold_pile.png" id="4_weyj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_agq4b"]
+font = ExtResource("3_flj3m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkadg"]
+font = ExtResource("3_flj3m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6ykk"]
+font = ExtResource("3_flj3m")
+font_size = 12
+
+[node name="BottomMenuBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_542gl")
+
+[node name="Bottom Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_right = 18.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_axsvn")
+
+[node name="Health" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 47.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="BloodyAnkh" type="TextureRect" parent="Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00391667
+anchor_top = 0.882222
+anchor_right = 0.0509167
+anchor_bottom = 0.977222
+offset_left = 7.84333
+offset_top = 917.711
+offset_right = 95.9633
+offset_bottom = 1015.91
+grow_vertical = 0
+texture = ExtResource("2_b3ymc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GateHealthLabel" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.887
+anchor_right = 0.103
+anchor_bottom = 0.915
+offset_left = 102.8
+offset_top = 922.52
+offset_right = 183.88
+offset_bottom = 951.4
+text = "Gate Health"
+label_settings = SubResource("LabelSettings_agq4b")
+metadata/_edit_use_anchors_ = true
+
+[node name="GateHealth" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0624375
+anchor_top = 0.908704
+anchor_right = 0.0874375
+anchor_bottom = 0.935704
+offset_left = 117.503
+offset_top = 944.652
+offset_right = 159.503
+offset_bottom = 973.572
+text = "30/30
+"
+label_settings = SubResource("LabelSettings_agq4b")
+metadata/_edit_use_anchors_ = true
+
+[node name="Gold" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 304.0
+offset_top = 970.0
+offset_right = 344.0
+offset_bottom = 1010.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="GoldPile" type="TextureRect" parent="Gold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.9
+anchor_top = -0.075
+anchor_right = 1.05
+anchor_bottom = 1.175
+offset_right = -3.0
+offset_bottom = -5.0
+texture = ExtResource("4_weyj5")
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldLabel" type="Label" parent="Gold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.375002
+anchor_right = 2.575
+anchor_bottom = 1.125
+offset_top = -6.10352e-05
+offset_bottom = -6.10352e-05
+text = "Gold
+"
+label_settings = SubResource("LabelSettings_agq4b")
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldAmt" type="Label" parent="Gold"]
+modulate = Color(0.85098, 0.698039, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.525
+anchor_top = 0.850002
+anchor_right = 2.6
+anchor_bottom = 1.6
+offset_top = -6.10352e-05
+offset_bottom = -6.10352e-05
+text = "0000
+"
+label_settings = SubResource("LabelSettings_rkadg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Debug" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.810264
+anchor_top = 0.877078
+anchor_right = 1.00375
+anchor_bottom = 0.994484
+offset_left = 8.29358
+offset_top = 1.75604
+offset_right = 7.38562
+offset_bottom = 1.72205
+metadata/_edit_use_anchors_ = true
+
+[node name="ElapsedTime" type="Control" parent="Debug"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ElapsedTime" type="Label" parent="Debug/ElapsedTime"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.760638
+anchor_top = 0.850394
+anchor_right = 0.941489
+anchor_bottom = 1.0315
+grow_horizontal = 2
+grow_vertical = 2
+text = "000000000"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true
+
+[node name="ElapsedTimeLabel" type="Label" parent="Debug/ElapsedTime"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.553191
+anchor_top = 0.850394
+anchor_right = 0.75
+anchor_bottom = 1.0315
+grow_horizontal = 2
+grow_vertical = 2
+text = "Elapsed Time:"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesSpawned" type="Control" parent="Debug"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemiesSpawned" type="Label" parent="Debug/EnemiesSpawned"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.760638
+anchor_top = 0.748031
+anchor_right = 0.896277
+anchor_bottom = 0.929134
+grow_horizontal = 2
+grow_vertical = 2
+text = "000000"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesSpawnedLabel" type="Label" parent="Debug/EnemiesSpawned"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.484043
+anchor_top = 0.748031
+anchor_right = 0.75
+anchor_bottom = 0.929134
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enemies Spawned:"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesKilled" type="Control" parent="Debug"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemiesKilled" type="Label" parent="Debug/EnemiesKilled"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.760638
+anchor_top = 0.653543
+anchor_right = 0.896277
+anchor_bottom = 0.834646
+grow_horizontal = 2
+grow_vertical = 2
+text = "000000"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemiesKilledLabel" type="Label" parent="Debug/EnemiesKilled"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.680851
+anchor_top = 0.653543
+anchor_right = 0.768617
+anchor_bottom = 0.834646
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kills:"
+label_settings = SubResource("LabelSettings_c6ykk")
+metadata/_edit_use_anchors_ = true

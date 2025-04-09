@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://8aidk0mi8jex"]
+
+[ext_resource type="Texture2D" uid="uid://bjg8voguwchpd" path="res://Assets/Monsters/Mob 50.bmp" id="1_0kw1g"]
+[ext_resource type="Script" uid="uid://dr032ut40yo1c" path="res://Scenes/Levels/Enemies/skeleton_path_3d.gd" id="1_6eu06"]
+[ext_resource type="Script" uid="uid://c48o650ec4rwi" path="res://Scenes/Levels/Enemies/skeleton_body.gd" id="2_kss0w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0p2dq"]
+radius = 0.131092
+height = 0.845001
+
+[node name="SkeletonPath3D" type="PathFollow3D"]
+use_model_front = true
+script = ExtResource("1_6eu06")
+
+[node name="Skeleton" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+script = ExtResource("2_kss0w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0278769, -0.00623834)
+shape = SubResource("CapsuleShape3D_0p2dq")
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00394392, -0.00763601, 0.00148535)
+billboard = 1
+texture = ExtResource("1_0kw1g")

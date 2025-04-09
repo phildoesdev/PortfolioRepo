@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://i6rb13vtswxs"]
+
+[ext_resource type="PackedScene" uid="uid://cf3j0sps437mm" path="res://turret/projectile.tscn" id="1_1ygxx"]
+[ext_resource type="Script" uid="uid://4mf7hjulmi7t" path="res://turret/turret.gd" id="1_2nk30"]
+[ext_resource type="PackedScene" uid="uid://dc8idbi1bnht0" path="res://assets/Castle Meshes/Cannon.glb" id="3_wboin"]
+[ext_resource type="PackedScene" uid="uid://su3fyey24fc3" path="res://assets/Castle Meshes/TurretBase.glb" id="4_0sdka"]
+
+[sub_resource type="Animation" id="Animation_l8nhx"]
+resource_name = "FireCannon"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretBase/TurretTop/Cannon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.047, 1.311, -0.6), Vector3(-0.0466459, 1.31147, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xy0nf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretBase/TurretTop/Cannon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0466459, 1.31147, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_406x1"]
+_data = {
+&"FireCannon": SubResource("Animation_l8nhx"),
+&"RESET": SubResource("Animation_xy0nf")
+}
+
+[node name="Turret" type="Node3D"]
+script = ExtResource("1_2nk30")
+projectile = ExtResource("1_1ygxx")
+
+[node name="TurretBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="TurretTop" type="Node3D" parent="TurretBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_wboin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466459, 1.31147, 0)
+
+[node name="projectileTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_406x1")
+}
+
+[node name="TurretBase2" parent="." instance=ExtResource("4_0sdka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0453727, 0, 0)
+
+[connection signal="timeout" from="projectileTimer" to="." method="_on_projectile_timer_timeout"]

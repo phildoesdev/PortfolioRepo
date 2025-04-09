@@ -1,0 +1,168 @@
+[gd_scene load_steps=36 format=3 uid="uid://r1dk6t845xni"]
+
+[ext_resource type="Script" uid="uid://csyo8nd1xcnd3" path="res://src/Scenes/Abilities/Projectiles/TempestsBoltProjectile.cs" id="1_x6qfp"]
+[ext_resource type="Texture2D" uid="uid://cpjjfmdscylta" path="res://src/Assets/Attacks/Lightning/0.png" id="2_t2473"]
+[ext_resource type="Texture2D" uid="uid://p16bv84f1uyq" path="res://src/Assets/Attacks/Lightning/1.png" id="3_25sci"]
+[ext_resource type="Texture2D" uid="uid://cckj2xjj2qs5d" path="res://src/Assets/Attacks/Lightning/2.png" id="4_dfmmw"]
+[ext_resource type="Texture2D" uid="uid://dcpn4jbmcqfhw" path="res://src/Assets/Attacks/Lightning/3.png" id="5_8t15g"]
+[ext_resource type="Texture2D" uid="uid://5v3sjfj1hk4r" path="res://src/Assets/Attacks/Lightning/4.png" id="6_sv2ge"]
+[ext_resource type="Texture2D" uid="uid://c78a5ic82ijl4" path="res://src/Assets/Attacks/Lightning/5.png" id="7_sf08g"]
+[ext_resource type="Texture2D" uid="uid://cim8n0gyqk51j" path="res://src/Assets/Attacks/Lightning/6.png" id="8_23640"]
+[ext_resource type="Texture2D" uid="uid://ca6nn5w5a5kr6" path="res://src/Assets/Attacks/Lightning/7.png" id="9_w83j5"]
+[ext_resource type="Texture2D" uid="uid://qaxgj0fcmjyk" path="res://src/Assets/Attacks/Lightning/8.png" id="10_5scaq"]
+[ext_resource type="Texture2D" uid="uid://vgjld68y24gv" path="res://src/Assets/Attacks/Lightning/9.png" id="11_m2aod"]
+[ext_resource type="Texture2D" uid="uid://01h58api4fyt" path="res://src/Assets/Attacks/Instants/Sparkles/0x373A.png" id="12_meyr1"]
+[ext_resource type="Shader" uid="uid://c3njfs2rae3uf" path="res://src/Assets/Shaders/TempestsBoltAOE.gdshader" id="12_t2473"]
+[ext_resource type="Texture2D" uid="uid://dqy27f44jfmxt" path="res://src/Assets/Attacks/Instants/Sparkles/0x373B.png" id="13_jweip"]
+[ext_resource type="Texture2D" uid="uid://cwq8ati3alo37" path="res://src/Assets/Attacks/Instants/Sparkles/0x373C.png" id="14_wexa0"]
+[ext_resource type="Texture2D" uid="uid://bfbtlg3r2tknn" path="res://src/Assets/Attacks/Instants/Sparkles/0x373D.png" id="15_3j1o5"]
+[ext_resource type="Texture2D" uid="uid://cn0t5hff1rtx5" path="res://src/Assets/Attacks/Instants/Sparkles/0x373E.png" id="16_uo7rr"]
+[ext_resource type="Texture2D" uid="uid://ble607uqn6rer" path="res://src/Assets/Attacks/Instants/Sparkles/0x373F.png" id="17_i0qu4"]
+[ext_resource type="Texture2D" uid="uid://b557ap5ujun1b" path="res://src/Assets/Attacks/Instants/Sparkles/0x375B.png" id="18_k3t23"]
+[ext_resource type="Texture2D" uid="uid://cddlibw0xeqj" path="res://src/Assets/Attacks/Instants/Sparkles/0x375C.png" id="19_bq0jb"]
+[ext_resource type="Texture2D" uid="uid://cf6fu5la5wws6" path="res://src/Assets/Attacks/Instants/Sparkles/0x375D.png" id="20_7yfra"]
+[ext_resource type="Texture2D" uid="uid://lefjl31djyi5" path="res://src/Assets/Attacks/Instants/Sparkles/0x375E.png" id="21_f2nd0"]
+[ext_resource type="Texture2D" uid="uid://dbix3ublv8kgq" path="res://src/Assets/Attacks/Instants/Sparkles/0x375F.png" id="22_g21rh"]
+[ext_resource type="Texture2D" uid="uid://5eyeunrywwc4" path="res://src/Assets/Attacks/Instants/Sparkles/0x376B.png" id="23_7h53c"]
+[ext_resource type="Texture2D" uid="uid://cnyg6scbyt7od" path="res://src/Assets/Attacks/Instants/Sparkles/0x376C.png" id="24_ac34a"]
+[ext_resource type="Texture2D" uid="uid://cbvnjlfentdvs" path="res://src/Assets/Attacks/Instants/Sparkles/0x376D.png" id="25_dxtlq"]
+[ext_resource type="Texture2D" uid="uid://bk2en3osil7vb" path="res://src/Assets/Attacks/Instants/Sparkles/0x376E.png" id="26_7y65w"]
+[ext_resource type="Texture2D" uid="uid://d8hdwwlqp5g" path="res://src/Assets/Attacks/Instants/Sparkles/0x376F.png" id="27_5v1n0"]
+[ext_resource type="Texture2D" uid="uid://b3g8as3xhlx0i" path="res://src/Assets/Attacks/Instants/Sparkles/0x377A.png" id="28_rkqtj"]
+[ext_resource type="Texture2D" uid="uid://l26t5jnn8pyy" path="res://src/Assets/Attacks/Instants/Sparkles/0x377B.png" id="29_4e81p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jweip"]
+shader = ExtResource("12_t2473")
+shader_parameter/aoe_radius = 250.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wexa0"]
+seed = 430
+frequency = 0.0316
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3j1o5"]
+width = 1000
+height = 1000
+noise = SubResource("FastNoiseLite_wexa0")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3dtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t2473")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25sci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dfmmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8t15g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sv2ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sf08g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_23640")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w83j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5scaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m2aod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jweip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_meyr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jweip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wexa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3j1o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uo7rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i0qu4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_k3t23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bq0jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7yfra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f2nd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g21rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7h53c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ac34a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dxtlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7y65w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5v1n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rkqtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4e81p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TempestsBoltProjectile" type="Area2D"]
+script = ExtResource("1_x6qfp")
+
+[node name="AOE_Indicator" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jweip")
+texture = SubResource("NoiseTexture2D_3j1o5")
+
+[node name="LightningBolt1" type="AnimatedSprite2D" parent="."]
+z_index = 999
+position = Vector2(-3, -274)
+sprite_frames = SubResource("SpriteFrames_v3dtu")
+autoplay = "default"
+frame_progress = 0.30394
+
+[node name="Extras" type="Node2D" parent="."]
+
+[node name="Sparkles2" type="AnimatedSprite2D" parent="Extras"]
+position = Vector2(10, -6)
+sprite_frames = SubResource("SpriteFrames_jweip")
+autoplay = "default"
+frame_progress = 0.627929

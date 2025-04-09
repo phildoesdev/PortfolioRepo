@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg2ledl64x1lg"]
+
+[ext_resource type="MeshLibrary" uid="uid://bkw64wya68lhw" path="res://src/Scenes/MeshesAndGrids/tower_tile_mesh_library.tres" id="1_h5j6i"]
+
+[node name="TowerTileGridmap" type="GridMap"]
+mesh_library = ExtResource("1_h5j6i")
+cell_size = Vector3(0.5, 0.5, 0.5)
+cell_center_y = false

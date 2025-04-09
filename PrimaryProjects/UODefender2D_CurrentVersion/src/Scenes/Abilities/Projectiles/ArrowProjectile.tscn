@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd253f7kof65g"]
+
+[ext_resource type="Script" uid="uid://cunrpq415q2tt" path="res://src/Scenes/Abilities/Projectiles/ArrowProjectile.cs" id="1_5ybqq"]
+[ext_resource type="Texture2D" uid="uid://dx64f63np555h" path="res://src/Assets/Attacks/Projectiles/Arrow.png" id="1_wivq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wivq4"]
+radius = 5.0
+
+[node name="ArrowProjectile" type="Area2D"]
+script = ExtResource("1_5ybqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, -4)
+rotation = -2.34133
+texture = ExtResource("1_wivq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wivq4")

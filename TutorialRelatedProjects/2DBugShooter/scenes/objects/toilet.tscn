@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://kakwrt2f6e54"]
+
+[ext_resource type="PackedScene" uid="uid://pao357u5ug7i" path="res://scenes/objects/base/item_container.tscn" id="1_6y84s"]
+[ext_resource type="Texture2D" uid="uid://bthf75cg5dukp" path="res://resources/graphics/objects/toilet.png" id="2_1i84b"]
+[ext_resource type="Script" uid="uid://be2sh1p42havs" path="res://scenes/objects/toilet.gd" id="2_sqqi1"]
+[ext_resource type="Texture2D" uid="uid://6hdy0cd5u8qo" path="res://resources/graphics/objects/lid.png" id="4_iys0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpgpt"]
+size = Vector2(235, 232.25)
+
+[node name="Toilet" instance=ExtResource("1_6y84s")]
+script = ExtResource("2_sqqi1")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, -5.9)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_wpgpt")
+
+[node name="BaseSprite" parent="." index="1"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_1i84b")
+
+[node name="LidSprite" parent="." index="2"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_iys0o")
+
+[node name="SpawnPosition#Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+
+[node name="SpawnPosition#Marker2D2" type="Marker2D" parent="SpawnPositions" index="1"]
+position = Vector2(46, 0)
+
+[node name="SpawnPosition#Marker2D3" type="Marker2D" parent="SpawnPositions" index="2"]
+position = Vector2(-23, -39)
+
+[node name="SpawnPosition#Marker2D4" type="Marker2D" parent="SpawnPositions" index="3"]
+position = Vector2(-28, 9)
+
+[node name="SpawnPosition#Marker2D5" type="Marker2D" parent="SpawnPositions" index="4"]
+position = Vector2(29, -39)

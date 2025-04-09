@@ -1,0 +1,109 @@
+[gd_scene load_steps=21 format=3 uid="uid://decjo5wwliatj"]
+
+[ext_resource type="Script" uid="uid://c3vhw28x26lg2" path="res://src/Scenes/Towers/Attacks/Projectiles/fireball.gd" id="1_78yfg"]
+[ext_resource type="Texture2D" uid="uid://3s4t7n8vighb" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E4.png" id="2_2r3e8"]
+[ext_resource type="Texture2D" uid="uid://dn3cvtueyjikf" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E5.png" id="3_0hsc6"]
+[ext_resource type="Texture2D" uid="uid://co46ls00hgtap" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E6.png" id="4_51wsm"]
+[ext_resource type="Texture2D" uid="uid://b8c7x7xb2upf7" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E7.png" id="5_5025e"]
+[ext_resource type="Texture2D" uid="uid://dhexrwuqjaawt" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E8.png" id="6_uhrt0"]
+[ext_resource type="Texture2D" uid="uid://c1knfl4wx6aeu" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36E9.png" id="7_ycupj"]
+[ext_resource type="Texture2D" uid="uid://6qi6ea13gi0l" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36EA.png" id="8_4d18g"]
+[ext_resource type="Texture2D" uid="uid://cmgs6rv7v76j1" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36EB.png" id="9_74frt"]
+[ext_resource type="Texture2D" uid="uid://cjnw3kpwrqpvi" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36EC.png" id="10_4a53a"]
+[ext_resource type="Texture2D" uid="uid://cla6w0prp5ek5" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36ED.png" id="11_3g43l"]
+[ext_resource type="Texture2D" uid="uid://bsr7ijfd0cobn" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36EE.png" id="12_ygfjc"]
+[ext_resource type="Texture2D" uid="uid://bbdxtvvd4ty1" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36EF.png" id="13_lgnip"]
+[ext_resource type="Texture2D" uid="uid://cxs1teca1epi1" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36F0.png" id="14_tq354"]
+[ext_resource type="Texture2D" uid="uid://bpx6muqud0t2y" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36F1.png" id="15_xnok8"]
+[ext_resource type="Texture2D" uid="uid://8y8c8cinbefa" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36F2.png" id="16_mucej"]
+[ext_resource type="Texture2D" uid="uid://bmqj0lyayfa82" path="res://src/Assets/SpriteSheets/Attacks/projectiles/MagicArrow/0x36F3.png" id="17_078cc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wgua8"]
+radius = 0.0917984
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s4cri"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfli5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2r3e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0hsc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_51wsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5025e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uhrt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ycupj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4d18g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_74frt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4a53a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3g43l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ygfjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lgnip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tq354")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xnok8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mucej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_078cc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Fireball" type="Area3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_78yfg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("SphereShape3D_wgua8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = SubResource("ViewportTexture_s4cri")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(50, 50)
+size_2d_override = Vector2i(50, 50)
+
+[node name="FireballSprite" type="AnimatedSprite2D" parent="SubViewport"]
+texture_filter = 1
+texture_repeat = 1
+rotation = 0.785398
+sprite_frames = SubResource("SpriteFrames_yfli5")
+autoplay = "default"
+centered = false
+offset = Vector2(0, -25)

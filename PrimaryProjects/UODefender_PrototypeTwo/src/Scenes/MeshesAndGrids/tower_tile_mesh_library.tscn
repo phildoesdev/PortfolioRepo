@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://k8c3ukq4cme7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y024v"]
+transparency = 1
+albedo_color = Color(0.0823529, 1, 0.741176, 0.486275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kwwoy"]
+material = SubResource("StandardMaterial3D_y024v")
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fi2nf"]
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_373cf"]
+transparency = 1
+albedo_color = Color(0.788235, 0.603922, 0, 0.486275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kixjq"]
+material = SubResource("StandardMaterial3D_373cf")
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kccjy"]
+transparency = 1
+albedo_color = Color(0.4, 0, 0.0941176, 0.529412)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0ydi"]
+material = SubResource("StandardMaterial3D_kccjy")
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aurng"]
+transparency = 1
+albedo_color = Color(0.205117, 0.205117, 0.205117, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_twbu1"]
+material = SubResource("StandardMaterial3D_aurng")
+size = Vector3(0.5, 0.1, 0.5)
+
+[node name="TowerTileMeshLibrary" type="Node3D"]
+
+[node name="TowerSpaceAvailable" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kwwoy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TowerSpaceAvailable"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerSpaceAvailable/StaticBody3D"]
+shape = SubResource("BoxShape3D_fi2nf")
+
+[node name="TowerSpaceDebris" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_kixjq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TowerSpaceDebris"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerSpaceDebris/StaticBody3D"]
+shape = SubResource("BoxShape3D_fi2nf")
+
+[node name="TowerSpaceTaken" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("BoxMesh_i0ydi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TowerSpaceTaken"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerSpaceTaken/StaticBody3D"]
+shape = SubResource("BoxShape3D_fi2nf")
+
+[node name="TowerSpaceInvalid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.94337)
+mesh = SubResource("BoxMesh_twbu1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TowerSpaceInvalid"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerSpaceInvalid/StaticBody3D"]
+shape = SubResource("BoxShape3D_fi2nf")

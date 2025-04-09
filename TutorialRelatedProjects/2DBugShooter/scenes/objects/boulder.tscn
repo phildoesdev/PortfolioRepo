@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu448xywv166w"]
+
+[ext_resource type="Texture2D" uid="uid://bcjgv2vqtkmqi" path="res://resources/graphics/objects/infestation/large.png" id="1_gu4vk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_olo5k"]
+radius = 66.2873
+
+[node name="boulder" type="StaticBody2D"]
+
+[node name="Large" type="Sprite2D" parent="."]
+texture = ExtResource("1_gu4vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_olo5k")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxvgyvv1abogs"]
+
+[ext_resource type="Script" uid="uid://cw3ttwphkt4a3" path="res://src/Scenes/EnemyMgmt/EnemyManager/EnemyManager.cs" id="1_lnvua"]
+
+[node name="EnemyManager" type="Node2D"]
+script = ExtResource("1_lnvua")
+
+[node name="EnemiesContainer" type="Node2D" parent="."]
+
+[node name="NavigationRegions" type="Node2D" parent="."]
+
+[node name="SpawnSeries" type="Node2D" parent="."]
+
+[node name="SpawnTimerContainer" type="Node2D" parent="."]

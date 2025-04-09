@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://koou1wseyc0h"]
+
+[ext_resource type="Script" uid="uid://cn854a0i1xp1b" path="res://src/Scenes/Player/PlayerProfile.cs" id="1_lhswq"]
+
+[node name="PlayerProfile" type="Node2D"]
+script = ExtResource("1_lhswq")

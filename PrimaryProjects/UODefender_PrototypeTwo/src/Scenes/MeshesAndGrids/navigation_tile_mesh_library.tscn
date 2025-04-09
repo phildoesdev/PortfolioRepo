@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6aggmtafp1a5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wejex"]
+transparency = 1
+albedo_color = Color(0.603922, 0.839216, 0.301961, 0.486275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xhl7a"]
+material = SubResource("StandardMaterial3D_wejex")
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pigk2"]
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnvx1"]
+transparency = 1
+albedo_color = Color(0.92549, 0.658824, 0.815686, 0.486275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bae5u"]
+material = SubResource("StandardMaterial3D_lnvx1")
+size = Vector3(0.5, 2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vuo34"]
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4rl8"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.486275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oe6gi"]
+material = SubResource("StandardMaterial3D_y4rl8")
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14un2"]
+size = Vector3(0.5, 0.1, 0.5)
+
+[node name="NavigationIndicatorTiles" type="Node3D"]
+
+[node name="NavigationSpaceAvailable" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xhl7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationSpaceAvailable"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationSpaceAvailable/StaticBody3D"]
+shape = SubResource("BoxShape3D_pigk2")
+
+[node name="NavigationSpaceDerbris" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.744, 0.5, 0)
+mesh = SubResource("BoxMesh_bae5u")
+skeleton = NodePath("../NavigationSpaceAvailable")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationSpaceDerbris"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationSpaceDerbris/StaticBody3D"]
+shape = SubResource("BoxShape3D_vuo34")
+
+[node name="NavigationSpaceUnavailable" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5775, 0, 0)
+mesh = SubResource("BoxMesh_oe6gi")
+skeleton = NodePath("../NavigationSpaceAvailable")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationSpaceUnavailable"]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationSpaceUnavailable/StaticBody3D"]
+shape = SubResource("BoxShape3D_14un2")

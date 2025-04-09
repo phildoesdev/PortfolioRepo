@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc1jepdoovhxr"]
+
+[ext_resource type="Texture2D" uid="uid://dqwrjy0gf7k2g" path="res://resources/graphics/objects/Billboard.png" id="1_7yocx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymrgr"]
+size = Vector2(1236, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl08v"]
+size = Vector2(33.3125, 26.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoetu"]
+size = Vector2(31, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33qtl"]
+size = Vector2(31, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubtdw"]
+size = Vector2(31, 28)
+
+[node name="Billboard" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 15
+
+[node name="Billboard" type="Sprite2D" parent="."]
+texture = ExtResource("1_7yocx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ymrgr")
+
+[node name="foot1" type="CollisionShape2D" parent="."]
+position = Vector2(-486.656, -49.6875)
+shape = SubResource("RectangleShape2D_cl08v")
+
+[node name="foot2" type="CollisionShape2D" parent="."]
+position = Vector2(-487, 48)
+shape = SubResource("RectangleShape2D_uoetu")
+
+[node name="foot3" type="CollisionShape2D" parent="."]
+position = Vector2(486.5, -49.5)
+shape = SubResource("RectangleShape2D_33qtl")
+
+[node name="foot4" type="CollisionShape2D" parent="."]
+position = Vector2(487.5, 49)
+shape = SubResource("RectangleShape2D_ubtdw")

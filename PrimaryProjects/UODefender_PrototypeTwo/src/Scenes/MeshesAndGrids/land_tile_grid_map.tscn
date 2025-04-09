@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs84q28gkyxt5"]
+
+[ext_resource type="MeshLibrary" uid="uid://bhc0uf4jyteu8" path="res://src/Scenes/MeshesAndGrids/land_tile_mesh.tres" id="1_fpkpr"]
+
+[node name="LandTileGridMap" type="GridMap"]
+mesh_library = ExtResource("1_fpkpr")
+cell_size = Vector3(0.5, 0.5, 0.5)

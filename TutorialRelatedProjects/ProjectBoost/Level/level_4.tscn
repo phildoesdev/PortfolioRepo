@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://lmyrnpfjdv5o"]
+
+[ext_resource type="PackedScene" uid="uid://6ilup8lk45yc" path="res://Level/background.tscn" id="1_i6k2b"]
+[ext_resource type="PackedScene" uid="uid://c6e28bn1w8ufg" path="res://player.tscn" id="1_io0ix"]
+[ext_resource type="Script" uid="uid://brinaifm7dlqm" path="res://Level/LandingPad.gd" id="2_4owga"]
+[ext_resource type="PackedScene" uid="uid://bgyoaevffwnut" path="res://moving_hazard.tscn" id="3_afaix"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ti63"]
+albedo_color = Color(0.470588, 0.298039, 0.184314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emh5s"]
+albedo_color = Color(0.25098, 0.27451, 0.6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1uim"]
+albedo_color = Color(0, 0.470588, 0.117647, 1)
+
+[node name="Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00156784, -0.0206213, -0.000995636)
+
+[node name="LevelEtc" parent="." instance=ExtResource("1_i6k2b")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, 13)
+visible = false
+
+[node name="Floor" type="CSGBox3D" parent="." groups=["Hazard"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Player" parent="." instance=ExtResource("1_io0ix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.4, 0)
+
+[node name="LaunchPad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)
+use_collision = true
+size = Vector3(2, 0.4, 2)
+material = SubResource("StandardMaterial3D_emh5s")
+
+[node name="LandingPad" type="CSGBox3D" parent="." groups=["Goal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.2, 0)
+use_collision = true
+size = Vector3(2, 0.4, 2)
+material = SubResource("StandardMaterial3D_y1uim")
+script = ExtResource("2_4owga")
+file_path = "res://Level/level_3.tscn"
+
+[node name="MovingHazard" parent="." instance=ExtResource("3_afaix")]
+destination = Vector3(0, 2, 0)
+duration = 3.0

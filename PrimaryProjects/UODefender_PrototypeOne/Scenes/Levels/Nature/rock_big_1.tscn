@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://vv41anttx4vx"]
+
+[ext_resource type="Texture2D" uid="uid://cxjsgaaj7f4ga" path="res://Assets/Items/Rocks/Item 0x1366.bmp" id="1_4401s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r03c4"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="Rock1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.061076, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057626, 0)
+shape = SubResource("BoxShape3D_r03c4")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+billboard = 1
+texture = ExtResource("1_4401s")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjxcf85q2wvdy"]
+
+[ext_resource type="Theme" uid="uid://cctylk4tsmwng" path="res://scenes/user_interface/main_theme.tres" id="1_6pyto"]
+[ext_resource type="Script" uid="uid://dcqcwe2pfrfra" path="res://scenes/user_interface/ui.gd" id="1_j0qna"]
+[ext_resource type="Texture2D" uid="uid://b4k6qmyf8qgie" path="res://resources/graphics/ui/bullet.png" id="1_yl2ab"]
+[ext_resource type="Script" uid="uid://dcgcc23d52mfk" path="res://scenes/user_interface/Label.gd" id="2_7rtgh"]
+[ext_resource type="Texture2D" uid="uid://dqjph37p2e31k" path="res://resources/graphics/ui/grenade.png" id="2_kv20c"]
+[ext_resource type="Texture2D" uid="uid://bcq4ulogrkdnq" path="res://resources/graphics/ui/progress_bar/bg.png" id="5_g1pnm"]
+[ext_resource type="Script" uid="uid://cg03aqwb8arhu" path="res://scenes/user_interface/HealthBarMarginContainer.gd" id="5_jqu1p"]
+[ext_resource type="Texture2D" uid="uid://g24t2sk71i8v" path="res://resources/graphics/ui/progress_bar/over.png" id="6_jl4vj"]
+[ext_resource type="Texture2D" uid="uid://dj1jd511w4qri" path="res://resources/graphics/ui/progress_bar/progress.png" id="7_6gl7v"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_j0qna")
+
+[node name="HealthBar" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -40.0
+offset_right = 155.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_bottom = 30
+script = ExtResource("5_jqu1p")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthBar"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+value = 60.0
+texture_under = ExtResource("5_g1pnm")
+texture_over = ExtResource("6_jl4vj")
+texture_progress = ExtResource("7_6gl7v")
+
+[node name="Counters" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.905
+anchor_right = 0.085
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 38.7999
+offset_right = -106.6
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="CounterGrid" type="GridContainer" parent="Counters"]
+layout_mode = 2
+theme_override_constants/h_separation = 80
+columns = 2
+
+[node name="BulletCounter" type="Control" parent="Counters/CounterGrid"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Counters/CounterGrid/BulletCounter"]
+layout_mode = 2
+offset_right = 55.0
+offset_bottom = 83.0
+
+[node name="BulletCounter" type="Label" parent="Counters/CounterGrid/BulletCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6pyto")
+text = "150"
+horizontal_alignment = 1
+
+[node name="BulletIcon" type="TextureRect" parent="Counters/CounterGrid/BulletCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_yl2ab")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="Control" parent="Counters/CounterGrid"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Counters/CounterGrid/GrenadeCounter"]
+layout_mode = 2
+offset_right = 52.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrenadeCounter" type="Label" parent="Counters/CounterGrid/GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6pyto")
+text = "10
+"
+horizontal_alignment = 1
+script = ExtResource("2_7rtgh")
+
+[node name="GrenateIcon" type="TextureRect" parent="Counters/CounterGrid/GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_kv20c")
+expand_mode = 4

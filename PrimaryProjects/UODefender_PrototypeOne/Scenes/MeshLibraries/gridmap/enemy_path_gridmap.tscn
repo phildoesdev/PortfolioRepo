@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b23fsjx8nhfwy"]
+
+[ext_resource type="MeshLibrary" uid="uid://olmgkv8ystd7" path="res://Scenes/MeshLibraries/EnemyPathMeshLibrary.tres" id="1_cifhl"]
+[ext_resource type="Script" uid="uid://wevdqwcaxenb" path="res://Scenes/MeshLibraries/gridmap/enemy_path_gridmap.gd" id="2_x2gmc"]
+
+[node name="EnemyPathGridmap" type="GridMap"]
+mesh_library = ExtResource("1_cifhl")
+cell_size = Vector3(0.5, 0.1, 0.5)
+cell_center_y = false
+collision_layer = 8388608
+collision_mask = 0
+bake_navigation = true
+script = ExtResource("2_x2gmc")

@@ -1,0 +1,276 @@
+[gd_scene load_steps=14 format=3 uid="uid://bchopkkviqlki"]
+
+[ext_resource type="Shader" uid="uid://0lftbigkw31n" path="res://src/GUI/Screens/MainMenu/Shaders/MainMenuBGShader.gdshader" id="1_t3ir5"]
+[ext_resource type="Script" uid="uid://dcp834hoym6jw" path="res://src/GUI/Screens/MainMenu/MainMenu.cs" id="1_voyh7"]
+[ext_resource type="Texture2D" uid="uid://dt0hmx0fo3jbu" path="res://src/GUI/Screens/MainMenu/Assets/bgs/BackGround.png" id="2_f6f8u"]
+[ext_resource type="Texture2D" uid="uid://nrro3vuse3jo" path="res://src/GUI/Screens/MainMenu/Assets/bgs/noise_1.png" id="2_h5m05"]
+[ext_resource type="Texture2D" uid="uid://dk1t4cioduohm" path="res://src/GUI/Screens/MainMenu/Assets/buttons/xl_grey_btn_00.png" id="3_hsqdc"]
+[ext_resource type="Texture2D" uid="uid://itvd8fymy8rs" path="res://src/GUI/Screens/MainMenu/Assets/deco/bgDecoTop.png" id="3_ifi8u"]
+[ext_resource type="Texture2D" uid="uid://bplagh2iv6jen" path="res://src/GUI/Screens/MainMenu/Assets/deco/bgDecoBottom.png" id="4_52f6j"]
+[ext_resource type="Texture2D" uid="uid://ce0vfy1su3e6d" path="res://src/GUI/Screens/MainMenu/Assets/buttons/xl_grey_btn_02.png" id="4_rod3t"]
+[ext_resource type="Texture2D" uid="uid://d1nv4ib6she0h" path="res://src/GUI/Screens/MainMenu/Assets/buttons/xl_grey_btn_01.png" id="5_obefr"]
+[ext_resource type="Texture2D" uid="uid://dp4ln7hxmkxma" path="res://src/GUI/Screens/MainMenu/Assets/deco/YellowJewel.png" id="5_sp328"]
+[ext_resource type="Theme" uid="uid://c84cirohc7i03" path="res://src/Assets/Resources/ThemeResources/default_theme.tres" id="6_p40yp"]
+[ext_resource type="Texture2D" uid="uid://cfhgvcsx6js3q" path="res://src/GUI/Screens/MainMenu/Assets/deco/line.png" id="7_6228r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bv070"]
+shader = ExtResource("1_t3ir5")
+shader_parameter/noise_texture = ExtResource("2_h5m05")
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_voyh7")
+
+[node name="NoisyBG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bv070")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_right = -0.320004
+offset_bottom = -0.0919991
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.313
+anchor_right = 0.67
+anchor_bottom = 0.687
+offset_left = 0.145599
+offset_top = -0.28125
+offset_right = -0.14563
+offset_bottom = 0.281189
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f6f8u")
+
+[node name="Deco" type="Control" parent="Menu"]
+layout_mode = 1
+anchor_left = 0.334
+anchor_top = 0.313
+anchor_right = 0.667
+anchor_bottom = 0.685
+offset_left = 0.466827
+offset_top = 0.264771
+offset_right = -0.106628
+offset_bottom = -0.117004
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopDeco" type="TextureRect" parent="Menu/Deco"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.037619
+anchor_top = -0.0287958
+anchor_right = 1.03448
+anchor_bottom = 0.0314137
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ifi8u")
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomDeco" type="TextureRect" parent="Menu/Deco"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0721003
+anchor_top = 0.97644
+anchor_right = 0.934339
+anchor_bottom = 1.02344
+offset_right = -0.0540161
+offset_bottom = 0.0459995
+texture = ExtResource("4_52f6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="TopJewel" type="TextureRect" parent="Menu/Deco"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.483
+anchor_top = -0.016
+anchor_right = 0.517
+anchor_bottom = 0.026
+offset_left = -0.0769958
+offset_top = 0.112
+offset_right = 0.0769958
+offset_bottom = 0.0679998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sp328")
+metadata/_edit_use_anchors_ = true
+
+[node name="DividerLine" type="TextureRect" parent="Menu/Deco"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.107
+anchor_top = 0.335
+anchor_right = 0.906
+anchor_bottom = 0.335
+offset_left = -0.132999
+offset_top = 0.0300064
+offset_right = -0.0139771
+offset_bottom = 1.03001
+texture = ExtResource("7_6228r")
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleText" type="Control" parent="Menu"]
+layout_mode = 1
+anchor_left = 0.33136
+anchor_top = 0.316176
+anchor_right = 0.671376
+anchor_bottom = 0.683026
+offset_right = -0.306564
+offset_bottom = -0.0884094
+metadata/_edit_use_anchors_ = true
+
+[node name="UODef Title" type="RichTextLabel" parent="Menu/TitleText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0582834
+anchor_top = 0.0450933
+anchor_right = 1.05828
+anchor_bottom = 0.265252
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_p40yp")
+theme_override_font_sizes/normal_font_size = 36
+text = "UO:Defender"
+metadata/_edit_use_anchors_ = true
+
+[node name="TwoText" type="RichTextLabel" parent="Menu/TitleText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.432517
+anchor_top = 0.164457
+anchor_right = 0.619633
+anchor_bottom = 0.350134
+offset_left = -3.05176e-05
+offset_right = -3.05176e-05
+theme = ExtResource("6_p40yp")
+theme_override_font_sizes/normal_font_size = 48
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttons" type="Control" parent="Menu"]
+layout_mode = 1
+anchor_left = 0.333285
+anchor_top = 0.313715
+anchor_right = 0.668091
+anchor_bottom = 0.684429
+offset_left = 0.153259
+offset_top = -0.469788
+offset_right = -0.15332
+offset_bottom = 0.469666
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="TextureButton" parent="Menu/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.267975
+anchor_top = 0.413576
+anchor_right = 0.763302
+anchor_bottom = 0.557555
+offset_left = -0.0200195
+offset_top = 0.0139465
+offset_right = -0.0199585
+offset_bottom = 0.0139465
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_hsqdc")
+texture_pressed = ExtResource("4_rod3t")
+texture_hover = ExtResource("5_obefr")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Buttons/PlayButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.224277
+anchor_top = 0.173564
+anchor_right = 0.808861
+anchor_bottom = 0.882564
+offset_left = -1.0
+offset_right = 0.0509338
+offset_bottom = 0.00493622
+mouse_filter = 2
+theme = ExtResource("6_p40yp")
+theme_override_colors/default_color = Color(0.103225, 0.0981461, 0.103702, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "Play"
+scroll_active = false
+
+[node name="OptionsButton" type="TextureButton" parent="Menu/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.267913
+anchor_top = 0.60733
+anchor_right = 0.76324
+anchor_bottom = 0.751309
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_hsqdc")
+texture_pressed = ExtResource("4_rod3t")
+texture_hover = ExtResource("5_obefr")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Buttons/OptionsButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.106918
+anchor_top = 0.181818
+anchor_right = 0.943076
+anchor_bottom = 0.890819
+offset_left = -1.0
+offset_right = 0.0509338
+offset_bottom = 0.00493622
+mouse_filter = 2
+theme = ExtResource("6_p40yp")
+theme_override_colors/default_color = Color(0.103225, 0.0981461, 0.103702, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "Options"
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="TextureButton" parent="Menu/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.267851
+anchor_top = 0.79323
+anchor_right = 0.763178
+anchor_bottom = 0.93721
+offset_left = 0.0199585
+offset_top = -0.0140381
+offset_right = 0.0199585
+offset_bottom = -0.0140381
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_hsqdc")
+texture_pressed = ExtResource("4_rod3t")
+texture_hover = ExtResource("5_obefr")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Buttons/ExitButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245281
+anchor_top = 0.236369
+anchor_right = 0.829865
+anchor_bottom = 0.945369
+offset_left = -1.0
+offset_right = 0.0509338
+offset_bottom = 0.00493622
+mouse_filter = 2
+theme = ExtResource("6_p40yp")
+theme_override_colors/default_color = Color(0.103225, 0.0981461, 0.103702, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "Exit
+"
+scroll_active = false
+metadata/_edit_use_anchors_ = true

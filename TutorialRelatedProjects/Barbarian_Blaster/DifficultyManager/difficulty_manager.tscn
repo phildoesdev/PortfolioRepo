@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://db6yxhl2wbefb"]
+
+[ext_resource type="Script" uid="uid://d18elbmpq6tlq" path="res://DifficultyManager/difficulty_manager.gd" id="1_1md1q"]
+
+[node name="DifficultyManager" type="Node"]
+script = ExtResource("1_1md1q")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

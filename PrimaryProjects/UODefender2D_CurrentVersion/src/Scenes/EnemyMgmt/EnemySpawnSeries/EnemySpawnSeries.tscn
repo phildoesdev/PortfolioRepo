@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yhoysiq5c73d"]
+
+[ext_resource type="Script" uid="uid://b7hm6njlbra1e" path="res://src/Scenes/EnemyMgmt/EnemySpawnSeries/EnemySpawnSeries.cs" id="1_msfam"]
+
+[node name="EnemySpawnSeries" type="Node2D"]
+script = ExtResource("1_msfam")
+
+[node name="Waves" type="Node2D" parent="."]

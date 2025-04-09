@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://5d06tk65xrjf"]
+
+[ext_resource type="Script" uid="uid://bpbjw7city0oq" path="res://src/Scenes/Enemies/EnemyManager/enemy_navigation_region.gd" id="1_1c7tq"]
+[ext_resource type="PackedScene" uid="uid://78u6nn3e4hta" path="res://src/Scenes/MeshesAndGrids/navigation_tile_gridmap.tscn" id="1_kbeho"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qhqt7"]
+cell_height = 0.1
+agent_height = 1.0
+agent_radius = 0.25
+edge_max_length = 2.0
+edge_max_error = 7.3
+
+[node name="EnemyNavigationRegion" type="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0186967, 0.00337024, 0.00224304)
+navigation_mesh = SubResource("NavigationMesh_qhqt7")
+use_edge_connections = false
+script = ExtResource("1_1c7tq")
+
+[node name="NavigationTileGridmap" parent="." instance=ExtResource("1_kbeho")]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="DestinationPoints" type="Node3D" parent="."]

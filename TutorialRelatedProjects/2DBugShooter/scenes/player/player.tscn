@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddg5fypmgsb47"]
+
+[ext_resource type="Texture2D" uid="uid://fywyds474o4a" path="res://resources/graphics/player/player.png" id="1_1dq06"]
+[ext_resource type="Script" uid="uid://diqmpb8pab4r8" path="res://scenes/player/player.gd" id="1_qg77i"]
+[ext_resource type="Texture2D" uid="uid://c2f76tnf1h756" path="res://resources/graphics/decals/white.png" id="3_6qgtl"]
+[ext_resource type="AudioStream" uid="uid://d0r0ykm7viovw" path="res://resources/audio/organic_impact.mp3" id="4_u1aq4"]
+[ext_resource type="AudioStream" uid="uid://bud1i6kq3jgrs" path="res://resources/audio/m_shush.wav" id="5_x45ac"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc42l"]
+radius = 41.0
+
+[sub_resource type="GDScript" id="GDScript_rh517"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+"
+
+[sub_resource type="Gradient" id="Gradient_plt8s"]
+offsets = PackedFloat32Array(0, 0.996109)
+colors = PackedColorArray(0.266667, 0.568627, 0.745098, 1, 0.552941, 0.788235, 0.929412, 0.698039)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_134os"]
+gradient = SubResource("Gradient_plt8s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g7amo"]
+particle_flag_disable_z = true
+initial_velocity_min = 750.0
+initial_velocity_max = 1000.0
+gravity = Vector3(98, 98, 0)
+scale_min = 0.38
+scale_max = 0.5
+color = Color(0.266667, 0.568627, 0.745098, 0.682353)
+color_ramp = SubResource("GradientTexture1D_134os")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wc48m"]
+polygon = PackedVector2Array(-35, -31, -24, -35, 2, -29, 12, -18, 26, -12, 34, -14, 42, -13, 52, -11, 58, -10, 58, -6, 62, 2, 61, 6, 56, 7, 57, 10, 52, 10, 48, 11, 48, 15, 47, 15, 44, 19, 43, 24, 23, 30, 22, 25, 19, 23, 15, 24, 10, 25, 8, 26, 5, 29, 3, 31, -1, 34, -3, 36, -7, 38, -11, 42, -17, 46, -22, 48, -29, 47, -32, 46, -36, 41, -43, 38, -42, 35, -46, 32, -50, 28, -50, 25, -59, 18, -61, 6, -59, -1, -58, -8, -58, -13, -56, -15, -52, -17, -48, -18, -45, -21, -44, -27)
+
+[node name="player" type="CharacterBody2D" groups=["Entity", "Player"]]
+z_index = 2
+collision_mask = 31
+script = ExtResource("1_qg77i")
+
+[node name="player_img" type="Sprite2D" parent="."]
+rotation = 1.309
+scale = Vector2(0.665605, 0.617904)
+texture = ExtResource("1_1dq06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 6)
+shape = SubResource("CircleShape2D_jc42l")
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(59, -3)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(59, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(58, -7)
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="AttackPrimaryTimer" type="Timer" parent="Timers"]
+wait_time = 0.25
+script = SubResource("GDScript_rh517")
+
+[node name="AttackSecondaryTimer" type="Timer" parent="Timers"]
+
+[node name="LaserParticles" type="GPUParticles2D" parent="."]
+position = Vector2(59, -3)
+emitting = false
+texture = ExtResource("3_6qgtl")
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_g7amo")
+
+[node name="Shadow" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_wc48m")
+
+[node name="LaserNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u1aq4")
+volume_db = -25.0
+
+[node name="GrenadeLaunch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x45ac")
+volume_db = -25.0
+
+[connection signal="timeout" from="Timers/AttackPrimaryTimer" to="." method="_on_attack_primary_timer_timeout"]
+[connection signal="timeout" from="Timers/AttackSecondaryTimer" to="." method="_on_attack_secondary_timer_timeout"]

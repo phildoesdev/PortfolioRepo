@@ -1,0 +1,160 @@
+[gd_scene load_steps=15 format=3 uid="uid://6ilup8lk45yc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0v4q4"]
+sky_top_color = Color(0.239216, 0, 0.00392157, 1)
+sky_horizon_color = Color(0.609804, 0.54225, 0.53423, 1)
+ground_horizon_color = Color(0.609804, 0.54225, 0.53423, 1)
+
+[sub_resource type="Sky" id="Sky_mhw8v"]
+sky_material = SubResource("ProceduralSkyMaterial_0v4q4")
+
+[sub_resource type="Environment" id="Environment_ajqi1"]
+background_mode = 1
+background_color = Color(0.0705882, 0.0235294, 0.0117647, 1)
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_mhw8v")
+ambient_light_source = 3
+ambient_light_color = Color(0.74902, 0.537255, 0, 1)
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ti63"]
+albedo_color = Color(0.470588, 0.298039, 0.184314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edvoa"]
+albedo_color = Color(0.243137, 0.32549, 0.956863, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_tyhdm"]
+inner_radius = 1.0
+outer_radius = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgm5y"]
+albedo_color = Color(0.797168, 0.41844, 0.337161, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_jw4l0"]
+inner_radius = 0.75
+outer_radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4812k"]
+albedo_color = Color(0.356863, 0.427451, 0.94902, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mr1m"]
+albedo_color = Color(0.117647, 0.419608, 0.337255, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1xuhl"]
+radius = 10.0
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtnfw"]
+albedo_color = Color(0.298039, 0.596078, 0.627451, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2y2ro"]
+radius = 2.5
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rsx1"]
+albedo_color = Color(0.52549, 0.568627, 0.368627, 1)
+backlight = Color(0, 0.517647, 1, 1)
+
+[node name="LevelEtc" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.676081, 0.679467, -0.285025, -0.070244, 0.444501, 0.89302, 0.733472, -0.583732, 0.348247, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ajqi1")
+
+[node name="Floor" type="CSGBox3D" parent="." groups=["Hazard"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.9983, -0.0582784, 0, 0.0582784, 0.9983, 0, 0, 0, 1, -12.7529, 7.37125, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-0.788752, -0.614712, 0, 0.614712, -0.788752, 0, 0, 0, 1, -12.1594, 13.864, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall5" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-0.998584, 0.0532073, 0, -0.0532073, -0.998584, 0, 0, 0, 1, -12.1594, 20.5753, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall6" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.754229, -0.656612, 0, 0.656612, 0.754229, 0, 0, 0, 1, 13.8393, 20.5753, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.962753, 0.270382, 0, -0.270382, 0.962753, 0, 0, 0, 1, 13.7304, 7.37125, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Wall4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-0.79069, 0.612217, 0, -0.612217, -0.79069, 0, 0, 0, 1, 15.7431, 13.864, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Ceiling" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.249096, -0.968479, 0, 0.968479, 0.249096, 0, 0, 0, 1, -5.12511, 24.0659, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Ceiling2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.249096, -0.968479, 0, 0.968479, 0.249096, 0, 0, 0, 1, 2.45241, 24.0659, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Ceiling3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(0.581314, 0.81368, 0, -0.81368, 0.581314, 0, 0, 0, 1, 10.6382, 24.0659, 0.0808105)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_0ti63")
+
+[node name="Backing" type="Node3D" parent="."]
+
+[node name="FloatingDonut" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(0.386191, 0.531937, 0.753592, -0.918939, 0.29277, 0.264268, -0.0800549, -0.794562, 0.601883, 5.59657, 11.9385, -8.73561)
+material_override = SubResource("StandardMaterial3D_edvoa")
+mesh = SubResource("TorusMesh_tyhdm")
+
+[node name="FloatingDonut4" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(0.351535, 0.304212, 0.88537, -0.918939, 0.29277, 0.264268, -0.178816, -0.9065, 0.382471, -2.13471, 14.672, -7.96506)
+material_override = SubResource("StandardMaterial3D_cgm5y")
+mesh = SubResource("TorusMesh_tyhdm")
+
+[node name="FloatingDonut2" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(0.272573, 0.352374, -0.895286, -0.530535, -0.721223, -0.445388, -0.802644, 0.596381, -0.009639, 9.80692, 11.9385, -6.47581)
+material_override = SubResource("StandardMaterial3D_cgm5y")
+mesh = SubResource("TorusMesh_jw4l0")
+
+[node name="FloatingDonut3" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(-0.50132, -0.683285, -0.530849, -0.827752, 0.200041, 0.524224, -0.252002, 0.702215, -0.665875, -9.36213, 18.5342, -5.07974)
+material_override = SubResource("StandardMaterial3D_4812k")
+mesh = SubResource("TorusMesh_jw4l0")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(0.0244596, -0.0434691, 0.998755, 0.74787, 0.663762, 0.0105737, -0.663395, 0.74668, 0.0487447, 4.16008, 4.31365, -24.1888)
+material_override = SubResource("StandardMaterial3D_2mr1m")
+mesh = SubResource("SphereMesh_1xuhl")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(-0.641152, -0.758758, 0.114938, 0.751751, -0.590877, 0.292805, -0.154254, 0.274137, 0.949239, 0.783067, 16.617, -9.96926)
+material_override = SubResource("StandardMaterial3D_vtnfw")
+mesh = SubResource("SphereMesh_2y2ro")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Backing"]
+transform = Transform3D(0.257961, -0.637317, 0.726143, -0.42622, 0.599426, 0.677515, -0.86706, -0.484269, -0.117009, -4.8834, 5.41393, -3.41925)
+material_override = SubResource("StandardMaterial3D_6rsx1")
+mesh = SubResource("SphereMesh_2y2ro")

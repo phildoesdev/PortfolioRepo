@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3vsjups720ge"]
+
+[ext_resource type="Script" uid="uid://dyrgf861ejcwf" path="res://src/Scenes/Player/player.gd" id="1_7kul1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64bm3"]
+shading_mode = 0
+albedo_color = Color(0.917647, 1, 0.188235, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kjevn"]
+material = SubResource("StandardMaterial3D_64bm3")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d022s"]
+radius = 0.1
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_7kul1")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+fov = 60.0
+size = 0.03
+near = 0.025
+
+[node name="PlayerBodyMesh" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("SphereMesh_kjevn")
+skeleton = NodePath("../..")
+
+[node name="PlayerCollisionMesh" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_d022s")

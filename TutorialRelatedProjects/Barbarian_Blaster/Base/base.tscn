@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1vjhovncq5wr"]
+
+[ext_resource type="Script" uid="uid://dw1y4ivts8txj" path="res://Base/base.gd" id="1_v7u2y"]
+[ext_resource type="FontFile" uid="uid://dniu5a4x6mb0h" path="res://assets/fonts/Asap/static/Asap-Bold.ttf" id="2_bfilo"]
+[ext_resource type="PackedScene" uid="uid://giucp4ljve2e" path="res://assets/Castle Meshes/Base.glb" id="2_vkjv0"]
+
+[node name="Base" type="Node3D" groups=["base"]]
+script = ExtResource("1_v7u2y")
+
+[node name="HealthLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5412, 1.75293, 3.55738)
+billboard = 1
+text = "100"
+font = ExtResource("2_bfilo")
+font_size = 500
+outline_size = 100
+
+[node name="Base" parent="." instance=ExtResource("2_vkjv0")]

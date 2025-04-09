@@ -1,0 +1,311 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0opbxmxqtlc"]
+
+[ext_resource type="Script" uid="uid://xsuh7l8girlw" path="res://src/GUI/InGame/BottomMenu/BottomMenu.cs" id="1_fok6x"]
+[ext_resource type="Texture2D" uid="uid://cx1p7q63qe8q7" path="res://src/GUI/InGame/BottomMenu/Assets/bgs/PlayerInfo_BG4.png" id="1_tg015"]
+[ext_resource type="Theme" uid="uid://c84cirohc7i03" path="res://src/Assets/Resources/ThemeResources/default_theme.tres" id="2_fok6x"]
+
+[node name="BottomMenu" type="CanvasLayer"]
+script = ExtResource("1_fok6x")
+
+[node name="BottomMenu" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.774319
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="BottomMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.379
+anchor_right = 0.300021
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 0.0719986
+offset_right = -0.039978
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tg015")
+metadata/_edit_use_anchors_ = true
+
+[node name="BotMenuText" type="Control" parent="BottomMenu/Background"]
+layout_mode = 1
+anchor_left = 0.0598911
+anchor_top = 0.180556
+anchor_right = 0.940514
+anchor_bottom = 0.993278
+offset_right = -0.223003
+offset_bottom = -0.0320053
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043299
+anchor_top = 0.162393
+anchor_right = 0.224268
+anchor_bottom = 0.393282
+offset_right = 0.23
+offset_bottom = -0.0139999
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.744621, 4.25476e-05, 0.0839316, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Health"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0801134
+anchor_top = 0.358829
+anchor_right = 0.32965
+anchor_bottom = 0.559829
+offset_left = 0.144999
+offset_top = 0.0169983
+offset_right = 0.119995
+offset_bottom = 0.5
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.697351, 1.64487e-05, 0.0757116, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "30/30"
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0430103
+anchor_top = 0.538581
+anchor_right = 0.22501
+anchor_bottom = 0.769581
+offset_left = 0.139984
+offset_top = -0.0139999
+offset_right = -0.130005
+offset_bottom = -0.0410004
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.682353, 0.576471, 0.435294, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Gold"
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0800208
+anchor_top = 0.726866
+anchor_right = 0.327856
+anchor_bottom = 0.957
+offset_left = 0.189896
+offset_top = -0.0432968
+offset_right = -0.00999451
+offset_bottom = 0.0309982
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.682353, 0.576471, 0.435294, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "0000"
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317608
+anchor_top = 0.530333
+anchor_right = 0.701041
+anchor_bottom = 0.701051
+offset_left = -0.0400009
+offset_top = -0.0490017
+offset_right = -0.00500488
+offset_bottom = -0.0230026
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0, 0.552941, 0.360784, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Spawned"
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.352804
+anchor_top = 0.735256
+anchor_right = 0.709433
+anchor_bottom = 0.906256
+offset_left = -0.110001
+offset_top = -0.0250015
+offset_right = -0.0750122
+offset_bottom = -0.0320015
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(4.09111e-06, 0.554584, 0.359365, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "0000"
+metadata/_edit_use_anchors_ = true
+
+[node name="KillsLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472175
+anchor_top = 0.448644
+anchor_right = 0.855607
+anchor_bottom = 0.619362
+offset_left = 58.9951
+offset_top = 10.5087
+offset_right = 59.0301
+offset_bottom = 10.5347
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.726868, 0, 0.305373, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Killed"
+metadata/_edit_use_anchors_ = true
+
+[node name="KillsText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.658041
+anchor_top = 0.709778
+anchor_right = 1.04104
+anchor_bottom = 0.880777
+offset_left = -0.150116
+offset_top = -0.0439682
+offset_right = 0.0946655
+offset_bottom = -0.0509644
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.726868, 0, 0.305373, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "0000"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31801
+anchor_top = 0.161932
+anchor_right = 0.49901
+anchor_bottom = 0.392932
+offset_left = -0.235001
+offset_top = 0.0539932
+offset_right = -0.019989
+offset_bottom = 0.0269928
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.70584, 0.686643, 0.684087, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Score"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoresText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.352319
+anchor_top = 0.341667
+anchor_right = 0.708937
+anchor_bottom = 0.572667
+offset_left = 0.124985
+offset_top = 0.0250015
+offset_right = 0.164978
+offset_bottom = -0.0019989
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.70584, 0.686643, 0.684087, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "000000"
+metadata/_edit_use_anchors_ = true
+
+[node name="WavesLabel" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5937
+anchor_top = 0.171094
+anchor_right = 0.7757
+anchor_bottom = 0.402094
+offset_left = 0.0549927
+offset_top = -0.0180016
+offset_right = -0.215027
+offset_bottom = -0.045002
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.0962894, 0.530978, 0.716571, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Waves"
+metadata/_edit_use_anchors_ = true
+
+[node name="WavesText" type="RichTextLabel" parent="BottomMenu/Background/BotMenuText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.660206
+anchor_top = 0.350607
+anchor_right = 0.880206
+anchor_bottom = 0.683607
+offset_left = -0.200012
+offset_top = -0.0209999
+offset_right = 0.0999756
+offset_bottom = 0.0179977
+theme = ExtResource("2_fok6x")
+theme_override_colors/default_color = Color(0.0658874, 0.550176, 0.762287, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "30/30"
+metadata/_edit_use_anchors_ = true
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 154.0
+offset_bottom = 116.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 467.0
+offset_bottom = 72.0
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 517.0
+offset_bottom = 98.0
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 458.0
+offset_bottom = 27.0
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect/ReferenceRect3"]
+layout_mode = 0
+offset_left = 267.0
+offset_right = 352.0
+offset_bottom = 110.0
+
+[node name="ReferenceRect4" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -13.0
+offset_right = 52.0
+offset_bottom = 112.0
+
+[node name="ReferenceRect5" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 28.0
+offset_right = 150.0
+offset_bottom = 116.0
+
+[node name="ReferenceRect6" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 6.0
+offset_right = 345.0
+offset_bottom = 126.0
+
+[node name="ReferenceRect7" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_left = -3.00002
+offset_top = 92.0
+offset_right = 641.0
+offset_bottom = 132.0
+
+[node name="ReferenceRect8" type="ReferenceRect" parent="BottomMenu/Background/BotMenuText/ReferenceRect"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = -2.0
+offset_right = 267.0
+offset_bottom = 89.0

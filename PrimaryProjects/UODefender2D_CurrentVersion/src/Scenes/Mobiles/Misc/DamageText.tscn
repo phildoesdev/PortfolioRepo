@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://f5muj6ow7gig"]
+
+[ext_resource type="Theme" uid="uid://c84cirohc7i03" path="res://src/Assets/Resources/ThemeResources/default_theme.tres" id="1_e204n"]
+[ext_resource type="Script" uid="uid://cuvdm20rqyu8u" path="res://src/Scenes/Mobiles/Misc/DamageText.cs" id="1_pcuka"]
+
+[node name="DamageText" type="Marker2D"]
+z_index = 4096
+script = ExtResource("1_pcuka")
+
+[node name="dmgLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.5
+offset_top = -30.0
+offset_right = 249.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_e204n")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1

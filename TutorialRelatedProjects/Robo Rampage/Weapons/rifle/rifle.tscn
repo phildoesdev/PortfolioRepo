@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3wufs7jlupk"]
+
+[ext_resource type="PackedScene" uid="uid://d0fibooua18pa" path="res://Weapons/hitscan_weapon.tscn" id="1_wvef8"]
+[ext_resource type="PackedScene" uid="uid://c56r0lhsox42a" path="res://Weapons/sparks.tscn" id="2_hjaj8"]
+[ext_resource type="PackedScene" uid="uid://diw1k5ga8kn2t" path="res://Weapons/rifle/Rifle.glb" id="3_llbcw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtwsj"]
+emission_enabled = true
+emission = Color(0.47451, 0.74902, 0.956863, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="Curve" id="Curve_0je8f"]
+_data = [Vector2(0, 0.482464), 0.0, 0.0, 0, 0, Vector2(0.188586, 1), 0.201319, 0.201319, 0, 0, Vector2(1, 0), -2.09034, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_i8obb"]
+curve = SubResource("Curve_0je8f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ii31i"]
+lifetime_randomness = 0.25
+direction = Vector3(0, 0, -1)
+spread = 10.0
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+damping_max = 25.0
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_i8obb")
+turbulence_noise_scale = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_sr4jx"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Rifle" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_wvef8")]
+fire_rate = 3.0
+recoil = 0.8
+weapon_mesh = NodePath("Rifle")
+weapon_range = 300.0
+weapon_dmg = 150
+muzzle_flash = NodePath("MuzzleFlash")
+sparks_scene = ExtResource("2_hjaj8")
+
+[node name="Rifle" parent="." index="0" instance=ExtResource("3_llbcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.35, -1.64316)
+
+[node name="Part_104" parent="Rifle" index="0"]
+layers = 2
+
+[node name="Gun butt_018" parent="Rifle" index="1"]
+layers = 2
+
+[node name="Part_106" parent="Rifle" index="2"]
+layers = 2
+
+[node name="Grip_027" parent="Rifle" index="3"]
+layers = 2
+
+[node name="Part_108" parent="Rifle" index="4"]
+layers = 2
+
+[node name="Scope_022" parent="Rifle" index="5"]
+layers = 2
+
+[node name="Scope_023" parent="Rifle" index="6"]
+layers = 2
+
+[node name="Extra accessories_008" parent="Rifle" index="7"]
+layers = 2
+
+[node name="Part_112" parent="Rifle" index="8"]
+layers = 2
+
+[node name="Part_113" parent="Rifle" index="9"]
+layers = 2
+
+[node name="Muzzle breaks" parent="Rifle" index="10"]
+layers = 2
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691993, -0.308861, -3.03405)
+layers = 2
+material_override = SubResource("StandardMaterial3D_vtwsj")
+cast_shadow = 0
+emitting = false
+amount = 12
+lifetime = 0.07
+one_shot = true
+explosiveness = 0.8
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ii31i")
+draw_pass_1 = SubResource("BoxMesh_sr4jx")
+
+[editable path="Rifle"]

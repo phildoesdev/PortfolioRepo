@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwardrwdox6yy"]
+
+[ext_resource type="Script" uid="uid://qduf1bs7ytg8" path="res://scenes/levels/level1.gd" id="1_e2sgv"]
+[ext_resource type="PackedScene" uid="uid://cjxcf85q2wvdy" path="res://scenes/user_interface/ui.tscn" id="3_6hsk7"]
+[ext_resource type="PackedScene" uid="uid://ddg5fypmgsb47" path="res://scenes/player/player.tscn" id="4_uiuv1"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_e2sgv")
+
+[node name="Decals" type="Node2D" parent="."]
+
+[node name="ground" type="Node2D" parent="."]
+position = Vector2(0.000488281, 0)
+
+[node name="Infestation" type="Node2D" parent="."]
+position = Vector2(11, 6)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("4_uiuv1")]
+position = Vector2(200, 388)
+max_speed = 800
+speed = 800
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-13, 54)
+zoom = Vector2(0.6, 0.6)
+position_smoothing_speed = 1.0
+
+[node name="AmmoRestock" type="Timer" parent="player"]
+wait_time = 5.0
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("3_6hsk7")]
+unique_name_in_owner = true
+
+[connection signal="grenade_fired" from="player" to="." method="_on_player_grenade_fired"]
+[connection signal="laser_fired" from="player" to="." method="_on_player_laser_fired"]
+[connection signal="timeout" from="player/AmmoRestock" to="player" method="_on_ammo_restock_timeout"]

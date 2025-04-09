@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://px1jdro6pc6p"]
+
+[ext_resource type="Script" uid="uid://clpmiy4b054p2" path="res://src/Scenes/EnemyMgmt/EnemyNavigation/EnemyNavigationRegion.cs" id="1_vcskh"]
+[ext_resource type="Texture2D" uid="uid://cvfi1kdp3okwo" path="res://src/Assets/SpriteSheets/SystemTiles/EnemyNavTiles.png" id="2_1u53v"]
+[ext_resource type="Script" uid="uid://460vb8xex28b" path="res://src/Scenes/EnemyMgmt/EnemyNavigation/EnemyNavTileMapLayer.cs" id="3_2hlo1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y4fs5"]
+vertices = PackedVector2Array(22, 0, 0, 22, -22, 0, 0, -22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rcdqx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u0eu1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iimhc"]
+texture = ExtResource("2_1u53v")
+texture_region_size = Vector2i(44, 44)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0.501961)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_y4fs5")
+1:0/0 = 0
+1:0/0/modulate = Color(1, 1, 1, 0.501961)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u0eu1")
+2:0/0 = 0
+2:0/0/modulate = Color(1, 1, 1, 0.501961)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u0eu1")
+0:1/0 = 0
+0:1/0/modulate = Color(1, 1, 1, 0.501961)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rcdqx")
+1:1/0 = 0
+1:1/0/modulate = Color(1, 1, 1, 0.501961)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u0eu1")
+2:1/0 = 0
+2:1/0/modulate = Color(1, 1, 1, 0.501961)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -22, -22, 0, 0, 22, 22, 0)
+2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u0eu1")
+
+[sub_resource type="TileSet" id="TileSet_mqr1g"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(44, 44)
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
+navigation_layer_0/layers = 1
+sources/2 = SubResource("TileSetAtlasSource_iimhc")
+
+[node name="EnemyNavigationRegion" type="Node2D"]
+script = ExtResource("1_vcskh")
+
+[node name="EnemyNavTileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+texture_repeat = 1
+tile_set = SubResource("TileSet_mqr1g")
+script = ExtResource("3_2hlo1")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="DestinationPoint" type="Node2D" parent="."]

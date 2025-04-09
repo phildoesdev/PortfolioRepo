@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://duewmlcxs6g7t"]
+
+[ext_resource type="Texture2D" uid="uid://bqmkwike52jgb" path="res://Assets/Items/Trees/Item 0xCCE.bmp" id="1_jro4s"]
+[ext_resource type="Texture2D" uid="uid://d3r0hy6rexxlm" path="res://Assets/Items/Trees/Item 0xCCD.bmp" id="2_ygeob"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n5mue"]
+radius = 0.029961
+height = 0.726344
+
+[node name="Tree1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0324894, -0.469234, 0)
+shape = SubResource("CapsuleShape3D_n5mue")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.00400001, 0)
+billboard = 1
+texture = ExtResource("2_ygeob")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_jro4s")
