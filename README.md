@@ -9,12 +9,23 @@
 >    - [Screen Shots](#primary-project-screen-shots)
 > - [Completed Tutorials & Related Projects](#completed-tutorials-section)
 >    - [Screen Shots](#tutorial-projects-screen-shots)
-
+<!-- > - [Links](#links) -->
 <br>
 <span id="main-introduction"></span>
 
 ## Introduction
 > I am a skilled software developer with a bachelor’s degree in computer science from Michigan State University and 10 years of experience, focusing on web development. For the past five years I have been working remotely at an IoT start-up where I am responsible for developing and maintaining the company’s software and server infrastructure. I have dedicated the last 14 months of nights and weekends to touch, understand, and implement as many aspects of game development as possible.
+
+<!-- <br>
+<br>
+
+
+## Links
+> - LinkedIn
+> - Sprite To Spritesheet Repo
+> - XtraBackupAutomator Repo
+> - 
+ -->
 <br>
 <br>
 <hr>
@@ -28,16 +39,15 @@
 
 <br>
 
-- ## UO:Defender 2 (Main project) - <b>[Screen Shots](#primary-project-screen-shots)</b> - <a href="PrimaryProjects/UODefender2D_CurrentVersion/src" target="_blank">Code</a> - <b><a href="https://www.youtube.com/watch?v=Mbz872JtU1w" target="_blank">YouTube</a></b>
+- ## UO:Defender 2 (Main project) - <b>[Screen Shots](#primary-project-screen-shots)</b> - <a href="PrimaryProjects/UODefender2D_CurrentVersion/src" target="_blank">Code</a> - <b><a href="https://www.youtube.com/watch?v=rc0TPBeNXVY" target="_blank">YouTube</a></b>
 > <img src="_ReadMEAssets/UODefenderGifs/UODefender2/UODefenderCoverImg.png" loading="lazy">
 >
 > - Worked on ___05/08/2024 to Present___
 >   - <b><a href="PrimaryProjects/UODefender2D_CurrentVersion/src" target="_blank">UO:Defender 2 Code</a> </b>
->   - <b><a href="https://www.youtube.com/watch?v=Mbz872JtU1w" target="_blank">GamePlay Video (YouTube)</a></b>
+>   - <b><a href="https://www.youtube.com/watch?v=rc0TPBeNXVY" target="_blank">GamePlay Video (YouTube)</a></b>
 > - Details
 >   - This work in progress is a 2D Tower Defense game, written in C# using the Godot engine.
->   - I was able to put together a lot of what I had learned from tutorials as well as from the previous two prototypes to approach this design thoughtfully. This project has been an excellent teacher.
->   - This is a work in progress and is missing a ton of 
+>   - I was able to put together a lot of what I had learned from tutorials as well as from the previous two prototypes to approach this design thoughtfully. This work in progress has been an excellent teacher.
 > - ___[Screen Shots & Features](#primary-project-screen-shots)___
 
 <br>
@@ -65,7 +75,7 @@
 
 <br>
 
-- ## Sprite To Sprite Sheet (Art Pipeline) - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet/tree/release/pythonProject/src" target="_blank">Code</a>
+- ## Sprite To Sprite Sheet (Art Pipeline) - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet/tree/main/pythonProject/src" target="_blank">Code</a>
 > <div align="center"> <img src="_ReadMEAssets/SpriteToSpriteSheet_readme_imgs.png" loading="lazy" width="75%"></div>
 >
 >  - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet" target="_blank">Sprite To Sprite Sheet Repo Link</a>
@@ -92,7 +102,7 @@
 >  - Completed 01/11/24 
 >    - [2D Bug Shooter Code](TutorialRelatedProjects/2DBugShooter/scenes) - [Screen Shots](#intro-to-godot-4)
 >  - Covered
->  - Introduction to concepts of 2D game design, and the Godot Game Engine
+>    - Introduction to concepts of 2D game design, and the Godot Game Engine
 
 - ## Complete Godot 3D: Code Your Own 3D Games In Godot 4! - ([Screen Shots](#complete-godot-3d-projects))
 > <div align="center"><img src="_ReadMEAssets/TutorialGifs/RoboRampage.png" loading="lazy" width="75%"> </div>
@@ -104,15 +114,16 @@
 >    - <b><a href="TutorialRelatedProjects/Robo%20Rampage" target="_blank">Robo Rampage Code</a> - [Screen Shots](#robo-rampage)</b>
 >  - Covered
 >    - Introduction to concepts of 3D game design, further exploring the Godot Game Engine API
->  - Utilized the engine to implement basic game building blocks such as movement, collision, and progression
+>    - Utilized the engine to implement basic game building blocks such as movement, collision, and progression
+>    - Worked with 3D meshes, collisions, navigation, and other 3D concepts
 
 - ## Math for Video Games: Builder Better Games Faster with Advanced Game Math
 >  - <b>18 Hours</b> - <a href="https://www.gamedev.tv/courses/math-for-games/welcome-to-the-course/3195" target="_blank">GameDev.TV Tutorial Link</a> 
 >  - Completed 03/27/24
 >  - Covered
 >    - Exposed me to a variety of topics as well as let me go back and reestablish some older knowledge
->    - The course covered trigonometry, vector math, matrix math, rotation & interpolation, math with polar coords, complex #s, quaternions, and statistics
->    - Let me think deeply about math topics that I felt weak in. This was a very valuable course for me.
+>    - The course covered trigonometry, vector math, matrix math, rotation & interpolation, math with polar coords, complex #s, quaternions, and basic statistics
+>    - This tutorial let me think deeply about math topics that I felt weak in. This was a very valuable course for me.
 
 - ## Godot 4 Shaders - [Code](TutorialRelatedProjects/CommonTechniques/shaders) - [Screen Shots](#godot-shaders)
 >  - <b>4 Hours</b> - <a href="https://www.gamedev.tv/courses/godot-shaders/course-overview/6054" target="_blank">GameDev.TV Tutorial Link</a> 
@@ -136,7 +147,7 @@
 <br>
 
 <span id="primary-project-screen-shots"></span>
-## UO:Defender 2 (Main project) - <b><a href="PrimaryProjects/UODefender2D_CurrentVersion/src" target="_blank">Code</a> - [Screen Shots](#primary-project-screen-shots)</b> - <b><a href="https://www.youtube.com/watch?v=Mbz872JtU1w" target="_blank">YouTube</a></b>
+## UO:Defender 2 (Main project) - <b><a href="PrimaryProjects/UODefender2D_CurrentVersion/src" target="_blank">Code</a> - [Screen Shots](#primary-project-screen-shots)</b> - <b><a href="https://www.youtube.com/watch?v=rc0TPBeNXVY" target="_blank">YouTube</a></b>
 
 - ### Gameplay GIF
 >
@@ -153,7 +164,7 @@
 >
 > <img src="_ReadMEAssets/UODefenderGifs/UODefender2/CodeExamples/Tower_and_Creature_Init.png" loading="lazy">
 >  <br>
-> Which has enabled me to easily create, clothe, animate, and create attacks for several towers
+> Which has enabled me to easily create, clothe, animate, and program new attacks for several towers
 > <div align="center"><img src="_ReadMEAssets/UODefenderGifs/UODefender2/Towers/Tower_Options.png" loading="lazy"></div>
 
 - ### A Dynamic Attack Base Class
@@ -170,7 +181,8 @@
 > - Plus many more partially implemented systems that work but are not implemented as full game features such as the [XP and Leveling System](PrimaryProjects/UODefender2D_CurrentVersion/src/Scenes/Leveling/XPManager.cs), and [spawn series with difficulty curves](PrimaryProjects/UODefender2D_CurrentVersion/src/Scenes/EnemyMgmt/EnemySpawnSeries) for creating enemy spawns!
 > - And also, features that are implemented, but have so much room to grow like the [intelligence FSM](PrimaryProjects/UODefender2D_CurrentVersion/src/Scenes/Mobiles/Intelligence/BaseIntelligence.cs), more [buildings](PrimaryProjects/UODefender2D_CurrentVersion/src/Scenes/Structures) with complex behaviors, and many more.
 
-- ### More [Screen Shots & Gifs](_ReadMEAssets/UODefenderGifs/UODefender2)
+- ### More Screen Shots & Gifs
+> - [_ReadMEAssets/UODefenderGifs/UODefender2](_ReadMEAssets/UODefenderGifs/UODefender2)
 
 
 <br>
@@ -274,7 +286,7 @@
 <span id="robo-rampage"></span>
 
 - ## Robo Rampage - [Code](TutorialRelatedProjects/Robo%20Rampage)
-> A 3D FPS where I implemented enemies that pursue the player through the level and can be killed with a weapon
+> A 3D FPS where I implemented enemies that pursue the player through the level and can be killed with a weapon. I worked with 3D meshes, collisions, navigation, and other 3D concepts
 > <div align="center"><img src="_ReadMEAssets/TutorialGifs/RoboRampage.png" alt="Robo Rampage" style="width: 75%"></div>
 >
 > ## Robo Rampage Gif
