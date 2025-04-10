@@ -14,7 +14,10 @@
 <span id="main-introduction"></span>
 
 ## Introduction
-> I am a skilled software developer with a bachelor’s degree in computer science from Michigan State University and 10 years of experience, focusing on web development. For the past five years I have been working remotely at an IoT start-up where I am responsible for developing and maintaining the company’s software and server infrastructure. I have dedicated the last 14 months of nights and weekends to touch, understand, and implement as many aspects of game development as possible.
+> I am a skilled software developer with a bachelor’s degree in computer science from Michigan State University. I have 10 years of experience, including spending the last 5 years working remotely as the lead developer in an IoT start-up.
+>  
+> Over the past 14 months, I have dedicated my nights and weekends to self-guided learning in game development and mathematics.
+
 
 <!-- <br>
 <br>
@@ -47,7 +50,7 @@
 >   - <b><a href="https://www.youtube.com/watch?v=rc0TPBeNXVY" target="_blank">GamePlay Video (YouTube)</a></b>
 > - Details
 >   - This work in progress is a 2D Tower Defense game, written in C# using the Godot engine.
->   - I was able to put together a lot of what I had learned from tutorials as well as from the previous two prototypes to approach this design thoughtfully. This work in progress has been an excellent teacher.
+>   - I was able to put together a lot of what I had learned from tutorials as well as from the previous two prototypes to approach this design thoughtfully. This project has been an excellent teacher.
 > - ___[Screen Shots & Features](#primary-project-screen-shots)___
 
 <br>
@@ -75,7 +78,7 @@
 
 <br>
 
-- ## Sprite To Sprite Sheet (Art Pipeline) - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet/tree/main/pythonProject/src" target="_blank">Code</a>
+- ## Sprite To Sprite Sheet (Art Pipeline) - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet" target="_blank">Code</a>
 > <div align="center"> <img src="_ReadMEAssets/SpriteToSpriteSheet_readme_imgs.png" loading="lazy" width="75%"></div>
 >
 >  - <a href="https://github.com/phildoesdev/SpriteToSpriteSheet" target="_blank">Sprite To Sprite Sheet Repo Link</a>
